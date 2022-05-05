@@ -5,18 +5,19 @@ import io.gatling.http.Predef._
 import utils.Environment
 
 
-object DeleteHearing {
 
-  val RequestHearing = scenario(scenarioName = "030_DeleteHearing_delete")
+object RequestHearing {
+
+  val RequestHearing = scenario(scenarioName = "010_RequestHearing_Post")
     .exec(http(requestName="post_request_hearings")
-      .delete("/hearings/2000000062")
+      .post("/hearings/")
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/RequestHearing.json")).asJson
       .check(status.is(202))
-      .check(bodyString.saveAs("BODY3")))
+      .check(bodyString.saveAs("BODY1")))
     .exec{
       session =>
-        println(session("BODY3").as[String])
+        println(session("BODY1").as[String])
         session
     }
 }
