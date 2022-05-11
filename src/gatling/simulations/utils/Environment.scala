@@ -11,10 +11,11 @@ object Environment {
 
  val IDAM_API_BASE_URI = "https://idam-api.perftest.platform.hmcts.net"
 
- val OAUTH_CLIENT = "xuiwebapp" //am_role_assignment //paybubble
- val S2S_BASE_URI = "http://rpe-service-auth-provider-perftest.service.core-compute-perftest.internal/testing-support"
+ val OAUTH_CLIENT = "xuiwebapp" //am_role_assignment // xuiwebapp / paybubble
+ val S2S_BASE_URI = "http://rpe-service-auth-provider-demo.service.core-compute-demo.internal/testing-support"
  val S2S_SERVICE_NAME = "hmc_hmi_inbound_adapter"
- val IDAM_OAUTH_SECRET = "NVYEC2X7XFSRENTU" //to be obtained from vault
+ //val IDAM_OAUTH_SECRET = "NVYEC2X7XFSRENTU" //to be obtained from vault
+ val IDAM_OAUTH_SECRET = "JBS3NSGNKOQQ22G7"
  val FUNCTIONAL_TEST_CLIENT_S2S_TOKEN = ""
 
  val thinkTime = 15
