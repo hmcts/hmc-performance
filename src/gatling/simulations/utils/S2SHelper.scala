@@ -37,7 +37,7 @@ object  S2SHelper {
    session
  })
 
-    .pause(5)
+    .pause(1)
 
 
 

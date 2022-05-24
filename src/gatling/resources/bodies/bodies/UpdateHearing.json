@@ -1,14 +1,14 @@
 {
   "requestDetails" : {
     "versionNumber" : 1
-
   },
   "hearingDetails": {
+    "amendReasonCode" : "LIST_ERR",
     "autolistFlag": true,
     "hearingType": "SUBSTANTIVE",
     "hearingWindow": {
-      "dateRangeStart": "2022-05-10",
-      "dateRangeEnd": "2023-05-10"
+      "dateRangeStart": "2024-05-12",
+      "dateRangeEnd": "2024-05-14"
     },
     "duration": 60,
     "nonStandardHearingDurationReasons": [
@@ -32,9 +32,6 @@
     "leadJudgeContractType": "AB123",
     "panelRequirements": {
       "roleType": [
-
-      ],
-      "authorisationTypes": [
         "T3"
       ],
       "authorisationSubType": [
@@ -50,12 +47,12 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "1594717367271987",
+    "caseRef": "${caseref}",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
-    "hmctsInternalCaseName": "Internal case name",
-    "publicCaseName": "Public case name",
+    "hmctsInternalCaseName": "Internal case name AMENDED VERSION",
+    "publicCaseName": "Public case name AMENDED VERSION",
     "caseAdditionalSecurityFlag": true,
     "caseInterpreterRequiredFlag": true,
     "caseCategories": [
