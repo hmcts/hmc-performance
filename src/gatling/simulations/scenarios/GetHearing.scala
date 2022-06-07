@@ -10,14 +10,16 @@ import utils.Environment
 object GetHearing {
 
   val GetHearing = scenario(scenarioName = "040_GetHearing_get")
-    .exec(http(requestName="get_hearing")
-      .get("/hearing/${hearingref}")
-      .headers(Environment.commonHeader)
-      .check(status.is(200))
-      .check(bodyString.saveAs("BODY4")))
-    .exec{
-      session =>
-        println(session("BODY4").as[String])
-        session
+    .group("040_GetHearing") {
+      .exec(http(requestName = "get_hearing")
+        .get("/hearing/${hearingref}")
+        .headers(Environment.commonHeader)
+        .check(status.is(200))
+        .check(bodyString.saveAs("BODY4")))
+        .exec {
+          session =>
+            println(session("BODY4").as[String])
+            session
+        }
     }
 }

@@ -1,14 +1,15 @@
 {
   "requestDetails" : {
-    "versionNumber" : 1
+    "versionNumber" : 2
+
   },
   "hearingDetails": {
     "amendReasonCode" : "LIST_ERR",
     "autolistFlag": true,
-    "hearingType": "SUBSTANTIVE",
+    "hearingType": "BBA3-DIR",
     "hearingWindow": {
-      "dateRangeStart": "2024-05-12",
-      "dateRangeEnd": "2024-05-14"
+      "dateRangeStart": "2022-05-12",
+      "dateRangeEnd": "2023-05-12"
     },
     "duration": 60,
     "nonStandardHearingDurationReasons": [
@@ -43,16 +44,16 @@
       "panelSpecialisms": [
       ]
     },
-    "hearingIsLinkedFlag": false
+    "hearingIsLinkedFlag": true
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "${caseref}",
+    "caseRef": "1546516815889666",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
-    "hmctsInternalCaseName": "Internal case name AMENDED VERSION",
-    "publicCaseName": "Public case name AMENDED VERSION",
+    "hmctsInternalCaseName": "Internal case name",
+    "publicCaseName": "Public case name",
     "caseAdditionalSecurityFlag": true,
     "caseInterpreterRequiredFlag": true,
     "caseCategories": [
@@ -71,7 +72,7 @@
   },
   "partyDetails": [
     {
-      "partyID": "P1",
+      "partyID": "1",
       "partyType": "IND",
       "partyRole": "DEF",
 

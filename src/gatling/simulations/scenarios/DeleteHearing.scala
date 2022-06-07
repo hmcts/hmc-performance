@@ -10,15 +10,17 @@ import utils.Environment
 object DeleteHearing {
 
   val DeleteHearing = scenario(scenarioName = "030_DeleteHearing_delete")
-    .exec(http(requestName="post_request_hearings")
-      .delete("/hearing/2000001060")
-      .headers(Environment.commonHeader)
-      .body(ElFileBody("bodies/bodies/DeleteHearing.json")).asJson
-      .check(status.is(202))
-      .check(bodyString.saveAs("BODY3")))
-    .exec{
-      session =>
-        println(session("BODY3").as[String])
-        session
+    .group("030_DeleteHearing") {
+      exec(http(requestName = "post_request_hearings")
+        .delete("/hearing/${hearingref}")
+        .headers(Environment.commonHeader)
+        .body(ElFileBody("bodies/bodies/DeleteHearing.json")).asJson
+        .check(status.is(202))
+        .check(bodyString.saveAs("BODY3")))
+        .exec {
+          session =>
+            println(session("BODY3").as[String])
+            session
+        }
     }
 }

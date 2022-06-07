@@ -34,7 +34,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         GetAllHearing.GetAllHearing,
         RequestHearing.RequestHearing,
         GetHearing.GetHearing,
-        GetAllHearing.GetAllHearing,
+        GetAllHearing.GetAllHearing
        )
     }
 
@@ -42,7 +42,6 @@ import utils.{Environment, IDAMHelper, S2SHelper}
     //This scenario Update and Delete Hearing and within each action it Views all hearing and views a single hearing
 
     val RUDH = scenario("RequestUpdateDeleteHearing")
-      .feed(requesthearingFeeder)
       .feed(updatehearingFeeder)
       .exitBlockOnFail
       {
@@ -69,7 +68,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
           GetHearing.GetHearing,
-          GetAllHearing.GetAllHearing,
+          GetAllHearing.GetAllHearing
         )
       }
 

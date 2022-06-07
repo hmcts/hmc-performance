@@ -1,14 +1,13 @@
 {
-  "requestDetails" : {
-    "versionNumber" : 1
-
+  "requestDetails": {
+    "versionNumber": 1
   },
   "hearingDetails": {
-    "autolistFlag": false,
-    "hearingType": "SUBSTANTIVE",
+    "autolistFlag": true,
+    "hearingType": "BBA3-DIR",
     "hearingWindow": {
-      "dateRangeStart": "2022-05-10",
-      "dateRangeEnd": "2023-05-10"
+      "dateRangeStart": "2022-05-12",
+      "dateRangeEnd": "2023-05-12"
     },
     "duration": 60,
     "nonStandardHearingDurationReasons": [
@@ -23,9 +22,7 @@
         "locationId": "372653"
       }
     ],
-    "facilitiesRequired": [
-
-    ],
+    "facilitiesRequired": [],
     "listingComments": "Some listing comments",
     "hearingRequester": "alex.whyte@hmcts.net",
     "privateHearingRequiredFlag": false,
@@ -37,17 +34,14 @@
       "authorisationSubType": [
         "COMM"
       ],
-      "panelPreferences": [
-
-      ],
-      "panelSpecialisms": [
-      ]
+      "panelPreferences": [],
+      "panelSpecialisms": []
     },
-    "hearingIsLinkedFlag": false
+    "hearingIsLinkedFlag": true
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "${caseref}",
+    "caseRef": "1652778401752555",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
@@ -62,7 +56,8 @@
       },
       {
         "categoryType": "caseSubType",
-        "categoryValue": "BBA3-002CP"
+        "categoryValue": "BBA3-002CP",
+        "categoryParent": "BBA3-002"
       }
     ],
     "caseManagementLocationCode": "372653",
@@ -71,10 +66,9 @@
   },
   "partyDetails": [
     {
-      "partyID": "P1",
+      "partyID": "1",
       "partyType": "IND",
       "partyRole": "DEF",
-
       "individualDetails": {
         "title": "Mr",
         "firstName": "Joe",
@@ -82,13 +76,10 @@
         "preferredHearingChannel": "INTER",
         "interpreterLanguage": "dan-dan",
         "otherReasonableAdjustmentDetails": "otherReasonableAdjustmentDetails val",
-        "reasonableAdjustments": [
-
-        ],
+        "reasonableAdjustments": [],
         "vulnerableFlag": true,
         "vulnerabilityDetails": "A bit vulnerable"
       }
     }
-
   ]
 }

@@ -10,7 +10,7 @@ object UpdateHearing {
 
   val UpdateHearing = scenario(scenarioName = "020_UpdateHearing_Post")
     .exec(http(requestName="put_update_hearings")
-      .put("/hearing/${hearingRequestID}")
+      .put("/hearing/${hearingref}")
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/bodies/UpdateHearing.json")).asJson
       .check(status.is(201))
