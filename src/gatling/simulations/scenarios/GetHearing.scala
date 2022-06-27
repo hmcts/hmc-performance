@@ -11,7 +11,7 @@ object GetHearing {
 
   val GetHearing = scenario(scenarioName = "040_GetHearing_get")
     .group("040_GetHearing") {
-      .exec(http(requestName = "get_hearing")
+      exec(http(requestName = "get_hearing")
         .get("/hearing/${hearingref}")
         .headers(Environment.commonHeader)
         .check(status.is(200))

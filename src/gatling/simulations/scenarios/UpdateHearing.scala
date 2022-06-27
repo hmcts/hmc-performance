@@ -9,7 +9,8 @@ import utils.Environment
 object UpdateHearing {
 
   val UpdateHearing = scenario(scenarioName = "020_UpdateHearing_Post")
-    .exec(http(requestName="put_update_hearings")
+    .group("010_post_request_hearings") {
+    exec(http(requestName="put_update_hearings")
       .put("/hearing/${hearingref}")
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/bodies/UpdateHearing.json")).asJson
@@ -19,5 +20,6 @@ object UpdateHearing {
       session =>
         println(session("BODY2").as[String])
         session
+    }
     }
 }

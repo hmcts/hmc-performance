@@ -10,6 +10,9 @@
       "dateRangeEnd": "2023-05-12"
     },
     "duration": 60,
+    "hearingChannels": [
+      "INTER"
+    ],
     "nonStandardHearingDurationReasons": [
       "First reason",
       "Second reason"
@@ -41,7 +44,7 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "1652778401752555",
+    "caseRef": "1655998939043825",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",

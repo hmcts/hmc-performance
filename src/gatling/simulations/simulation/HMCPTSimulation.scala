@@ -2,7 +2,7 @@ package simulation
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing}
+import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse}
 import utils.{Environment, IDAMHelper, S2SHelper}
 
 
@@ -67,18 +67,27 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
-          GetHearing.GetHearing,
-          GetAllHearing.GetAllHearing
+          GetAllHearing.GetAllHearing,
+          GetHearing.GetHearing
         )
       }
 
     //This scenario Views all hearing and views single hearing
-
+    val RHR = scenario("RequestHearingResponse")
+      .feed(hearingFeeder)
+      .exitBlockOnFail
+      {
+        exec(
+          S2SHelper.S2SAuthToken,
+          //  IDAMHelper.getIdamToken,
+          RequestHearingResponse.RequestHearingResponse
+        )
+      }
 
 
 
     //Smoke Tests
-  setUp(GH.inject(atOnceUsers(users = 1)))
+  setUp(RH.inject(atOnceUsers(users = 1)))
      .protocols(httpProtocol)
     .maxDuration(1200)
 

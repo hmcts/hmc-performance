@@ -14,7 +14,7 @@ object RequestHearing {
 
 
   val RequestHearing = scenario(scenarioName = "010_RequestHearing_Post")
-  .group("post_request_hearings") {
+  .group("010_post_request_hearings") {
     exec(http("post_request_hearings")
       .post("/hearing/")
       .headers(Environment.commonHeader)
