@@ -1,0 +1,55 @@
+{
+  "roleRequest": {
+    "assignerId": "cc992d9a-8fa5-49da-987f-93910234d0d3",
+    "process": "CCD Hearing Manager ORG Role",
+    "reference": "cc992d9a-8fa5-49da-987f-93910234d0d3",
+    "replaceExisting": false
+  },
+  "requestedRoles": [
+    {
+      "roleType": "ORGANISATION",
+      "grantType": "STANDARD",
+      "classification": "PUBLIC",
+      "attributes": {
+        "jurisdiction": "SSCS"
+      },
+      "roleName": "hearing-manager",
+      "roleCategory": "ADMIN",
+      "actorIdType": "IDAM",
+      "actorId": "${IDAMID}",
+      "authorisations": [
+        "Hearing Manager"
+      ]
+    },
+    {
+      "roleType": "ORGANISATION",
+      "grantType": "STANDARD",
+      "classification": "PUBLIC",
+      "attributes": {
+        "jurisdiction": "SSCS"
+      },
+      "roleName": "hearing-viewer",
+      "roleCategory": "ADMIN",
+      "actorIdType": "IDAM",
+      "actorId": "${IDAMID}",
+      "authorisations": [
+        "Hearing Viewer"
+      ]
+    },
+    {
+      "roleType": "ORGANISATION",
+      "grantType": "STANDARD",
+      "classification": "PUBLIC",
+      "attributes": {
+        "jurisdiction": "SSCS"
+      },
+      "roleName": "listed-hearing-viewer",
+      "roleCategory": "OTHER_GOV_DEPT",
+      "actorIdType": "IDAM",
+      "actorId": "${IDAMID}",
+      "authorisations": [
+        "Listed Hearing Viewer"
+      ]
+    }
+  ]
+}

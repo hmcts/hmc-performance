@@ -1,0 +1,17 @@
+{
+  "email":"${Username}",
+  "forename":"perftest",
+  "password":"Password12",
+  "roles": [{
+    "code": "caseworker"
+  }, {
+    "code": "caseworker-sscs"
+  }, {
+    "code": "listed-hearing-viewer"
+  }, {
+    "code": "hearing-viewer"
+  }, {
+    "code": "hearing-manager"
+  }],
+  "surname":"hearing"
+}

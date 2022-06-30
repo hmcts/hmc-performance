@@ -2,7 +2,7 @@ package simulation
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse}
+import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse,CreateHMCUser,UserAssignment}
 import utils.{Environment, IDAMHelper, S2SHelper}
 
 
@@ -10,6 +10,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   class HMCPTSimulation extends Simulation
   {
 
+    val HMCUsersFeeder = csv("bodies/bodies/HMCUsers.csv").circular
+    val HMCIDAMUsersFeeder = csv("bodies/bodies/HMCUsersIDAMID.csv").circular
     val requesthearingFeeder = csv("bodies/bodies/RequestHearing.csv").circular
     val hearingFeeder = csv("bodies/bodies/Hearing.csv").circular
     val updatehearingFeeder = csv("bodies/bodies/UpdateHearing.csv").circular
@@ -30,11 +32,11 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       exec(
        S2SHelper.S2SAuthToken,
         //  IDAMHelper.getIdamToken,
-        GetHearing.GetHearing,
-        GetAllHearing.GetAllHearing,
-        RequestHearing.RequestHearing,
-        GetHearing.GetHearing,
-        GetAllHearing.GetAllHearing
+    //  GetHearing.GetHearing,
+     //   GetAllHearing.GetAllHearing,
+      //  RequestHearing.RequestHearing,
+     //   GetHearing.GetHearing,
+      //  GetAllHearing.GetAllHearing
        )
     }
 
@@ -48,14 +50,14 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
-          GetHearing.GetHearing,
-          GetAllHearing.GetAllHearing,
+         GetHearing.GetHearing,
+       //   GetAllHearing.GetAllHearing,
           UpdateHearing.UpdateHearing,
+        //  GetHearing.GetHearing,
+         // GetAllHearing.GetAllHearing,
+         // DeleteHearing.DeleteHearing,
           GetHearing.GetHearing,
-          GetAllHearing.GetAllHearing,
-          DeleteHearing.DeleteHearing,
-          GetHearing.GetHearing,
-          GetAllHearing.GetAllHearing
+        //  GetAllHearing.GetAllHearing
         )
       }
 
@@ -85,9 +87,29 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       }
 
 
+    //CreateUser
+    val CreateUser = scenario("CreateUser")
+     .repeat(100){
+     feed(HMCUsersFeeder)
+     .exec(
+         CreateHMCUser.CreateHMCUser
+        )
+      }
+
+    //CreateUser
+    val UserAssignments = scenario("CreateUser")
+     .repeat(101){
+     feed(HMCIDAMUsersFeeder)
+     .exec(
+         S2SHelper.S2SAuthToken,
+         UserAssignment.UserAssignment
+        )
+      }
+
+
 
     //Smoke Tests
-  setUp(RH.inject(atOnceUsers(users = 1)))
+  setUp(UserAssignments.inject(atOnceUsers(users = 1)))
      .protocols(httpProtocol)
     .maxDuration(1200)
 
