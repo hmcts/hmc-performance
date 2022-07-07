@@ -4,10 +4,15 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import utils.Environment
 
-//This Deletes a single existing hearing.  The hearing needs to be in the following status (TBC) so that you can delete it
+	/*===============================================================================================
+	* Deletes a Single Hearing
+	 ===============================================================================================*/
 
 
 object DeleteHearing {
+
+  val MinThinkTime = Environment.minThinkTime
+  val MaxThinkTime = Environment.maxThinkTime
 
   val DeleteHearing = scenario(scenarioName = "030_DeleteHearing_delete")
     .group("030_DeleteHearing") {
@@ -22,5 +27,6 @@ object DeleteHearing {
             println(session("BODY3").as[String])
             session
         }
+    .pause(MinThinkTime , MaxThinkTime)
     }
 }

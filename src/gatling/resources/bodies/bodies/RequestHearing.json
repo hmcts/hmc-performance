@@ -44,7 +44,7 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "1655723631643056",
+    "caseRef": "${CaseRef1}",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
@@ -77,7 +77,6 @@
         "firstName": "Joe",
         "lastName": "Bloggs",
         "preferredHearingChannel": "INTER",
-        "interpreterLanguage": "dan-dan",
         "otherReasonableAdjustmentDetails": "otherReasonableAdjustmentDetails val",
         "reasonableAdjustments": [],
         "vulnerableFlag": true,

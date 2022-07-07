@@ -9,6 +9,8 @@
   }, {
     "code": "listed-hearing-viewer"
   }, {
+    "code": "caseworker-sscs-superuser"
+  },{
     "code": "hearing-viewer"
   }, {
     "code": "hearing-manager"

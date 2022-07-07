@@ -4,9 +4,14 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import utils.Environment
 
-//This updates an existing hearing.  the hearing must be in the following states (TBC) in order for you to be able to update it
+	/*===============================================================================================
+	* Updates a Single Hearing
+	 ===============================================================================================*/
 
 object UpdateHearing {
+
+  val MinThinkTime = Environment.minThinkTime
+  val MaxThinkTime = Environment.maxThinkTime
 
   val UpdateHearing = scenario(scenarioName = "020_UpdateHearing_Post")
     .group("010_post_request_hearings") {
@@ -21,5 +26,6 @@ object UpdateHearing {
         println(session("BODY2").as[String])
         session
     }
+    .pause(MinThinkTime , MaxThinkTime)
     }
 }

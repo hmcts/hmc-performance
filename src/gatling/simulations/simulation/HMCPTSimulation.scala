@@ -2,13 +2,18 @@ package simulation
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse,CreateHMCUser,UserAssignment}
+import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse,CreateHMCUser,UserAssignment,CreateAppealCase}
 import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 
   class HMCPTSimulation extends Simulation
   {
+
+	/*===============================================================================================
+	* Data Files used for Simlations
+	 ===============================================================================================*/
+
 
     val HMCUsersFeeder = csv("bodies/bodies/HMCUsers.csv").circular
     val HMCIDAMUsersFeeder = csv("bodies/bodies/HMCUsersIDAMID.csv").circular
@@ -23,21 +28,29 @@ import utils.{Environment, IDAMHelper, S2SHelper}
     // .proxy(Proxy("proxyout.reform.hmcts.net", 8080))
 
 
+	/*===============================================================================================
+	* Requests a Hearing simulation
+	* RequestHearingFeeder - CSV provides data for Request Hearing
+	* RequestHearingFeeder - CSV provides data for Request Hearing
+	 ===============================================================================================*/
+
     //This scenario Requests hearing, View All Hearing and Views a Hearing
     val RH = scenario("RequestHearing")
       .feed(requesthearingFeeder)
       .feed(hearingFeeder)
-      .exitBlockOnFail
+      .repeat(17){
+      exitBlockOnFail
       {
       exec(
        S2SHelper.S2SAuthToken,
-        //  IDAMHelper.getIdamToken,
-    //  GetHearing.GetHearing,
-     //   GetAllHearing.GetAllHearing,
-      //  RequestHearing.RequestHearing,
-     //   GetHearing.GetHearing,
-      //  GetAllHearing.GetAllHearing
+    // IDAMHelper.getIdamToken,
+       GetHearing.GetHearing,
+       GetAllHearing.GetAllHearing,
+       RequestHearing.RequestHearing,
+       GetHearing.GetHearing,
+       GetAllHearing.GetAllHearing
        )
+       }
     }
 
 
@@ -98,7 +111,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateUser
     val UserAssignments = scenario("CreateUser")
-     .repeat(101){
+     .repeat(1){
      feed(HMCIDAMUsersFeeder)
      .exec(
          S2SHelper.S2SAuthToken,
@@ -106,11 +119,19 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         )
       }
 
-
+    //CreateAppealCase
+    val CreateAppeal= scenario("CreateAppeal")
+     .repeat(1){
+     feed(HMCIDAMUsersFeeder)
+     .exec(
+         CreateAppealCase.CreateAppealCase
+        )
+      }
 
     //Smoke Tests
-  setUp(UserAssignments.inject(atOnceUsers(users = 1)))
+  setUp(CreateAppeal.inject(rampUsers(1).during(1)))
      .protocols(httpProtocol)
-    .maxDuration(1200)
+    .maxDuration(3600)
 
 }
+
