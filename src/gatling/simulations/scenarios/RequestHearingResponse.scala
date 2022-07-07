@@ -8,6 +8,12 @@ import utils.Environment
 
 //HCM Hearing Request Response API which aims to mimic the response from HMI back to HMC after the hearing has been listed
 
+	/*===============================================================================================
+	* Requests a Hearing for a Case.  Response is provided by HMC
+	* Hearing response details are saved to - HearingDetails.csv - This data is then used to feed
+	 ===============================================================================================*/
+
+
 object RequestHearingResponse {
 
   val RequestHearingResponse = scenario(scenarioName = "060_RequestHearing_Response")

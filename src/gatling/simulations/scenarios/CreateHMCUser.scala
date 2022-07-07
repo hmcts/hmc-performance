@@ -5,7 +5,9 @@ import io.gatling.http.Predef._
 import utils.Environment
 import java.io.{BufferedWriter, FileWriter}
 
-//This updates an existing hearing.  the hearing must be in the following states (TBC) in order for you to be able to update it
+	/*===============================================================================================
+	* Creates HMC User in IDAM
+	 ===============================================================================================*/
 
 object CreateHMCUser {
 

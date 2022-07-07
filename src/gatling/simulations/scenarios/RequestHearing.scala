@@ -6,12 +6,16 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import utils.Environment
 
-//HCM Hearing Request API which creates a hearing for an existing SSCS case.  The authroization ID in the header must be for a user who
-// has the ability to create a hearing.  After a hearing has been created the details are saved to HearingDetails.csv and contains
-//caseref,hearingref,hearingstatus,timestamp,versionnumber
+
+	/*===============================================================================================
+	* Requests a Hearing for a Case.  Response is provided by HMC
+	* Hearing response details are saved to - HearingDetails.csv - This data is then used to feed
+	 ===============================================================================================*/
 
 object RequestHearing {
 
+  val MinThinkTime = Environment.minThinkTime
+  val MaxThinkTime = Environment.maxThinkTime
 
   val RequestHearing = scenario(scenarioName = "010_RequestHearing_Post")
   .group("010_post_request_hearings") {
@@ -35,10 +39,11 @@ object RequestHearing {
     .exec { session =>
       val fw = new BufferedWriter(new FileWriter("HearingDetails.csv", true))
       try {
-        fw.write(session("caseref").as[String] + "," + session("hearingRequestID").as[String] + "," + session("status").as[String] + "," + session("timeStamp").as[String]+ "," + session("versionNumber").as[String] + "\r\n")
+        fw.write(session("CaseRef1").as[String] + "," + session("hearingRequestID").as[String] + "," + session("status").as[String] + "," + session("timeStamp").as[String]+ "," + session("versionNumber").as[String] + "\r\n")
       } finally fw.close()
       session
     }
+    .pause(MinThinkTime , MaxThinkTime)
 
   }
 }
