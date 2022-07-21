@@ -18,7 +18,7 @@ object CreateAppealCase {
      // .headers(Environment.basicHeader)
       .body(ElFileBody("bodies/bodies/CreateAppealCase.json")).asJson
       .check(status.is(201))
-     // .check(jsonPath("$..id").optional.saveAs("IDAMID"))
+      .check(header("Location").optional.saveAs("Location"))
       //.check(jsonPath("$..email").optional.saveAs("Email"))
       .check(bodyString.saveAs("BODY10")))
     .exec {
@@ -26,12 +26,12 @@ object CreateAppealCase {
         println(session("BODY10").as[String])
         session
     }
-     /*   .exec { session =>
+        .exec { session =>
           val fw = new BufferedWriter(new FileWriter("HMCAppeals.csv", true))
           try {
-            fw.write(session("BODY10").as[String] + "\r\n")
+            fw.write(session("Location").as[String] + "\r\n")
           } finally fw.close()
           session
-        }*/
+        }
     }
 }

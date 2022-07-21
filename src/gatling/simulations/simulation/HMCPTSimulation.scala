@@ -14,7 +14,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 	* Data Files used for Simlations
 	 ===============================================================================================*/
 
-
+    val NINumberFeeder = csv("bodies/bodies/NINumber.csv").circular
     val HMCUsersFeeder = csv("bodies/bodies/HMCUsers.csv").circular
     val HMCIDAMUsersFeeder = csv("bodies/bodies/HMCUsersIDAMID.csv").circular
     val requesthearingFeeder = csv("bodies/bodies/RequestHearing.csv").circular
@@ -38,7 +38,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
     val RH = scenario("RequestHearing")
       .feed(requesthearingFeeder)
       .feed(hearingFeeder)
-      .repeat(17){
+      .repeat(1){
       exitBlockOnFail
       {
       exec(
@@ -102,7 +102,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateUser
     val CreateUser = scenario("CreateUser")
-     .repeat(100){
+     .repeat(1){
      feed(HMCUsersFeeder)
      .exec(
          CreateHMCUser.CreateHMCUser
@@ -121,17 +121,17 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(1){
-     feed(HMCIDAMUsersFeeder)
+     .repeat(10){
+     feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase
         )
       }
 
     //Smoke Tests
-  setUp(CreateAppeal.inject(rampUsers(1).during(1)))
+  setUp(RH.inject(rampUsers(1).during(1)))
      .protocols(httpProtocol)
-    .maxDuration(3600)
+    .maxDuration(7600)
 
 }
 
