@@ -1,8 +1,11 @@
 {
-  "requestDetails": {
-    "versionNumber": 1
+  "requestDetails" : {
+    "versionNumber" : 1
   },
   "hearingDetails": {
+    "hearingChannels": [
+      "INTER"
+    ],
     "autolistFlag": true,
     "hearingType": "BBA3-DIR",
     "hearingWindow": {
@@ -10,9 +13,6 @@
       "dateRangeEnd": "2023-05-12"
     },
     "duration": 60,
-    "hearingChannels": [
-      "INTER"
-    ],
     "nonStandardHearingDurationReasons": [
       "First reason",
       "Second reason"
@@ -25,7 +25,8 @@
         "locationId": "372653"
       }
     ],
-    "facilitiesRequired": [],
+    "facilitiesRequired": [
+    ],
     "listingComments": "Some listing comments",
     "hearingRequester": "alex.whyte@hmcts.net",
     "privateHearingRequiredFlag": false,
@@ -37,8 +38,10 @@
       "authorisationSubType": [
         "COMM"
       ],
-      "panelPreferences": [],
-      "panelSpecialisms": []
+      "panelPreferences": [
+      ],
+      "panelSpecialisms": [
+      ]
     },
     "hearingIsLinkedFlag": true
   },
@@ -77,8 +80,10 @@
         "firstName": "Joe",
         "lastName": "Bloggs",
         "preferredHearingChannel": "INTER",
+        "interpreterLanguage": "dan",
         "otherReasonableAdjustmentDetails": "otherReasonableAdjustmentDetails val",
-        "reasonableAdjustments": [],
+        "reasonableAdjustments": [
+        ],
         "vulnerableFlag": true,
         "vulnerabilityDetails": "A bit vulnerable"
       }

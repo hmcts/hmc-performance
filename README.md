@@ -1,6 +1,22 @@
-Gatling nightly performance tests for Fee & Pay.
+Gatling HMC performance tests for HMC
 
-The repo contains scenarios for telephony, online telephony, bulk scan, CCD view payment, online payment and PBA.
+The repo contains scenarios for 
+
+	/*===============================================================================================
+	 Data Prep
+	 ===============================================================================================*/
+1. CreateHMCUser - Create a User in IDAM with caseworker, caseworker-sscs, listed-hearing-viewer, caseworker-sscs-superuser, hearing-viewer, hearing-manager
+HM
+2. UserAssignments - Assigns user roles in access mgt for the user
+3. CreateAppealCase - Creates a new case 
+
+
+/*===============================================================================================
+Scenario
+===============================================================================================*/
+
+1. 
+
 
 To run the test:
 1. Ensure that Gradle and Gatling are installed on your machine.
