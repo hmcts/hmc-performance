@@ -7,6 +7,9 @@ import utils.Environment
 
 	/*===============================================================================================
 	* Get details for a Single Hearing ID
+	* Get Hearing for a Case.  Response is provided by HMC
+    * Header - Bearer Token is required and s2s token for hmc_hmi_inbound_adapter
+    * Data - hearing.csv
 	 ===============================================================================================*/
 
 

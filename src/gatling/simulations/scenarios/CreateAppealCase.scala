@@ -6,12 +6,16 @@ import utils.Environment
 import java.io.{BufferedWriter, FileWriter}
 
 	/*===============================================================================================
-	* Creates HMC User in IDAM
+	* Data Prep - Creates Appeals for HMC which can then be used to Create/Get/Amend/Delete Hearings
+	* Single API Request - no auth is required
+	* The created Appeals are then written to the HMCAppeals.csv
+	* nino needs to be unique for each request in the CreateAppealCase.json.  This is currently fed
+	* in viaNINumber.csv
 	 ===============================================================================================*/
 
 object CreateAppealCase {
 
-  val CreateAppealCase = scenario(scenarioName = "901_CreateUser_Post")
+  val CreateAppealCase = scenario(scenarioName = "901_CreateAppeal_Post")
     .group("903_CreateAppealCase_Post") {
     exec(http(requestName="CreateAppealCase")
       .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")

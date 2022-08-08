@@ -74,7 +74,7 @@
     {
       "partyID": "1",
       "partyType": "IND",
-      "partyRole": "DEF",
+      "partyRole": "DEFE",
       "individualDetails": {
         "title": "Mr",
         "firstName": "Joe",
