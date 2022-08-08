@@ -5,7 +5,12 @@ import io.gatling.http.Predef._
 import utils.Environment
 import java.io.{BufferedWriter, FileWriter}
 
-//This updates an existing hearing.  the hearing must be in the following states (TBC) in order for you to be able to update it
+	/*===============================================================================================
+	* This sets up the user in Role Assignements with the Hearing credentials
+	* Uses a common header which requires Bearer Token and s2s token for "am_role_assignment_service"
+	* Data > copy output file  HMCUserDetails.csv to HMCUsersIDAMID.csv
+	 ===============================================================================================*/
+
 
 object UserAssignment {
 

@@ -102,7 +102,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateUser
     val CreateUser = scenario("CreateUser")
-     .repeat(1){
+     .repeat(100){
      feed(HMCUsersFeeder)
      .exec(
          CreateHMCUser.CreateHMCUser
@@ -111,7 +111,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateUser
     val UserAssignments = scenario("CreateUser")
-     .repeat(1){
+     .repeat(100){
      feed(HMCIDAMUsersFeeder)
      .exec(
          S2SHelper.S2SAuthToken,
@@ -121,17 +121,18 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(10){
+     .repeat(1000){
      feed(NINumberFeeder)
      .exec(
-         CreateAppealCase.CreateAppealCase
+         CreateAppealCase.CreateAppealCase,
+         pause(10)
         )
       }
 
     //Smoke Tests
-  setUp(RH.inject(rampUsers(1).during(1)))
+  setUp(CreateAppeal.inject(rampUsers(1).during(1)))
      .protocols(httpProtocol)
-    .maxDuration(7600)
+    .maxDuration(15000)
 
 }
 

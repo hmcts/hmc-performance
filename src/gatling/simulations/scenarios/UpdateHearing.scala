@@ -6,6 +6,9 @@ import utils.Environment
 
 	/*===============================================================================================
 	* Updates a Single Hearing
+    * Updated Hearing for a Case.  Response is provided by HMI and LA
+    * Header - Bearer Token is required and s2s token for hmc_hmi_inbound_adapter
+    * Data - UpdateHearing.csv
 	 ===============================================================================================*/
 
 object UpdateHearing {

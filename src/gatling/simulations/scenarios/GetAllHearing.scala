@@ -6,6 +6,9 @@ import utils.Environment
 
 	/*===============================================================================================
 	* Get Details for all Hearings for a Case
+    * Get Hearing for a Case.  Response is provided by HMC
+    * Header - Bearer Token is required and s2s token for hmc_hmi_inbound_adapter
+    * Data - hearing.csv
 	 ===============================================================================================*/
 
 object GetAllHearing {

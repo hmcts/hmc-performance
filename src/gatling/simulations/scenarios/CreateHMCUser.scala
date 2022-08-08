@@ -6,7 +6,10 @@ import utils.Environment
 import java.io.{BufferedWriter, FileWriter}
 
 	/*===============================================================================================
-	* Creates HMC User in IDAM
+	* Creates a new HMC User in IDAM
+	* Uses a basic header where no Auth is required
+	* HMCUsers.csv contains the Users and password to be setup
+	* once the users have been created they are written to HMCUserDetails.csv with their IDAM ID and Username
 	 ===============================================================================================*/
 
 object CreateHMCUser {

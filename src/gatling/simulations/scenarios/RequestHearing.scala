@@ -9,7 +9,9 @@ import utils.Environment
 
 	/*===============================================================================================
 	* Requests a Hearing for a Case.  Response is provided by HMC
-	* Hearing response details are saved to - HearingDetails.csv - This data is then used to feed
+	* Header - Bearer Token is required and s2s token for hmc_hmi_inbound_adapter
+	* Hearing response details are saved to - HearingDetails.csv - This data is then used to
+	* feed Get/Amend/Delete
 	 ===============================================================================================*/
 
 object RequestHearing {
