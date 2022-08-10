@@ -85,7 +85,13 @@
         "reasonableAdjustments": [
         ],
         "vulnerableFlag": true,
-        "vulnerabilityDetails": "A bit vulnerable"
+        "vulnerabilityDetails": "A bit vulnerable",
+        "facilitiesRequired": [
+          "3"
+        ],
+        "reasonableAdjustments": [
+          "RA0043"
+        ]
       }
     }
   ]
