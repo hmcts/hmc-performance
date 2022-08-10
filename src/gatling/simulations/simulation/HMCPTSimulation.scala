@@ -130,7 +130,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       }
 
     //Smoke Tests
-  setUp(RH.inject(rampUsers(1).during(1)))
+  setUp(RH.inject(rampUsers(1080).during(3400)))
      .protocols(httpProtocol)
     .maxDuration(3600)
 
