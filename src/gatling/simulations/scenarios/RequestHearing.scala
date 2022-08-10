@@ -26,14 +26,15 @@ object RequestHearing {
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/bodies/RequestHearing.json")).asJson
       .check(status.is(201))
-      //.check (regex ("\"hearingRequestID\":(.*?)").saveAs ("hearingRequestID"))
       .check (regex ("\"status\":").saveAs ("hearingstatus"))
       .check(jsonPath("$..hearingRequestID").optional.saveAs("hearingRequestID"))
       .check(jsonPath("$..status").optional.saveAs("status"))
       .check(jsonPath("$..timeStamp").optional.saveAs("timeStamp"))
       .check(jsonPath("$..versionNumber").optional.saveAs("versionNumber"))
       .check(bodyString.saveAs("BODY1")))
-    .exec {
+      }
+    .group("011_Writeoutput") {
+    exec {
       session =>
         println(session("BODY1").as[String])
         session

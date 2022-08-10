@@ -42,8 +42,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       exitBlockOnFail
       {
       exec(
-       S2SHelper.S2SAuthToken,
-    // IDAMHelper.getIdamToken,
+      S2SHelper.S2SAuthToken,
+      // IDAMHelper.getIdamToken,
        GetHearing.GetHearing,
        GetAllHearing.GetAllHearing,
        RequestHearing.RequestHearing,
@@ -130,9 +130,9 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       }
 
     //Smoke Tests
-  setUp(CreateAppeal.inject(rampUsers(1).during(1)))
+  setUp(RH.inject(rampUsers(1).during(1)))
      .protocols(httpProtocol)
-    .maxDuration(15000)
+    .maxDuration(3600)
 
 }
 
