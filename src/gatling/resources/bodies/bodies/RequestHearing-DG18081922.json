@@ -3,22 +3,21 @@
     "versionNumber" : 1
   },
   "hearingDetails": {
-    "amendReasonCodes" : ["amend"],
     "hearingChannels": [
       "INTER"
     ],
     "autolistFlag": true,
-    "hearingType": "BBA3-DIR",
+    "hearingType": "BBA3-SUB",
     "hearingWindow": {
-      "dateRangeStart": "2022-05-12",
-      "dateRangeEnd": "2023-05-12"
+      "dateRangeStart": "2022-08-12",
+      "dateRangeEnd": "2023-08-12"
     },
-    "duration": 60,
+    "duration": 15,
     "nonStandardHearingDurationReasons": [
       "First reason",
       "Second reason"
     ],
-    "hearingPriorityType": "HIGH",
+    "hearingPriorityType": "Urgent",
     "numberOfPhysicalAttendees": 4,
     "hearingLocations": [
       {
@@ -29,16 +28,8 @@
     "facilitiesRequired": [
     ],
     "listingComments": "Some listing comments",
-    "hearingRequester": "alex.whyte@hmcts.net",
     "privateHearingRequiredFlag": false,
-    "leadJudgeContractType": "AB123",
     "panelRequirements": {
-      "roleType": [
-        "T3"
-      ],
-      "authorisationSubType": [
-        "COMM"
-      ],
       "panelPreferences": [
       ],
       "panelSpecialisms": [
@@ -48,7 +39,7 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "${caseref2}",
+    "caseRef": "${CaseRef1}",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
@@ -63,7 +54,7 @@
       },
       {
         "categoryType": "caseSubType",
-        "categoryValue": "BBA3-002CP",
+        "categoryValue": "BBA3-002ML",
         "categoryParent": "BBA3-002"
       }
     ],
@@ -77,11 +68,10 @@
       "partyType": "IND",
       "partyRole": "APEL",
       "individualDetails": {
-        "title": "Mr",
         "firstName": "Joe",
         "lastName": "Bloggs",
         "preferredHearingChannel": "INTER",
-        "interpreterLanguage": null,
+        "interpreterLanguage": "dan",
         "otherReasonableAdjustmentDetails": "otherReasonableAdjustmentDetails val",
         "reasonableAdjustments": [
         ],

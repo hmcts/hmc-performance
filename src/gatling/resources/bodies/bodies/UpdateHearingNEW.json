@@ -8,10 +8,10 @@
       "INTER"
     ],
     "autolistFlag": true,
-    "hearingType": "BBA3-DIR",
+    "hearingType": "SUBSTANTIVE",
     "hearingWindow": {
-      "dateRangeStart": "2022-05-12",
-      "dateRangeEnd": "2023-05-12"
+      "dateRangeStart": "2022-05-10",
+      "dateRangeEnd": "2023-05-10"
     },
     "duration": 60,
     "nonStandardHearingDurationReasons": [
@@ -27,6 +27,7 @@
       }
     ],
     "facilitiesRequired": [
+      "3"
     ],
     "listingComments": "Some listing comments",
     "hearingRequester": "alex.whyte@hmcts.net",
@@ -36,10 +37,13 @@
       "roleType": [
         "T3"
       ],
+
+      "blah" : [],
       "authorisationSubType": [
         "COMM"
       ],
       "panelPreferences": [
+
       ],
       "panelSpecialisms": [
       ]
@@ -73,21 +77,24 @@
   },
   "partyDetails": [
     {
-      "partyID": "1",
+      "partyID": "P1",
       "partyType": "IND",
-      "partyRole": "APEL",
+      "partyRole": "DEF",
+
       "individualDetails": {
         "title": "Mr",
         "firstName": "Joe",
         "lastName": "Bloggs",
         "preferredHearingChannel": "INTER",
-        "interpreterLanguage": null,
+        "interpreterLanguage": "dan-dan",
         "otherReasonableAdjustmentDetails": "otherReasonableAdjustmentDetails val",
         "reasonableAdjustments": [
+          "RA0043"
         ],
         "vulnerableFlag": true,
         "vulnerabilityDetails": "A bit vulnerable"
       }
     }
+
   ]
 }

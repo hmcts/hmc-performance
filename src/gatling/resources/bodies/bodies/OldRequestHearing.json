@@ -3,17 +3,16 @@
     "versionNumber" : 1
   },
   "hearingDetails": {
-    "amendReasonCodes" : ["amend"],
     "hearingChannels": [
       "INTER"
     ],
     "autolistFlag": true,
     "hearingType": "BBA3-DIR",
     "hearingWindow": {
-      "dateRangeStart": "2022-05-12",
-      "dateRangeEnd": "2023-05-12"
+      "dateRangeStart": "2022-08-12",
+      "dateRangeEnd": "2023-08-12"
     },
-    "duration": 60,
+    "duration": 15,
     "nonStandardHearingDurationReasons": [
       "First reason",
       "Second reason"
@@ -48,7 +47,7 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "${caseref2}",
+    "caseRef": "${CaseRef1}",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
@@ -75,13 +74,13 @@
     {
       "partyID": "1",
       "partyType": "IND",
-      "partyRole": "APEL",
+      "partyRole": "DEFE",
       "individualDetails": {
         "title": "Mr",
         "firstName": "Joe",
         "lastName": "Bloggs",
         "preferredHearingChannel": "INTER",
-        "interpreterLanguage": null,
+        "interpreterLanguage": "dan",
         "otherReasonableAdjustmentDetails": "otherReasonableAdjustmentDetails val",
         "reasonableAdjustments": [
         ],

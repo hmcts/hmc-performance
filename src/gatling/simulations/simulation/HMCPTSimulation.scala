@@ -64,13 +64,14 @@ import utils.{Environment, IDAMHelper, S2SHelper}
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
          GetHearing.GetHearing,
-       //   GetAllHearing.GetAllHearing,
-          UpdateHearing.UpdateHearing,
-        //  GetHearing.GetHearing,
-         // GetAllHearing.GetAllHearing,
-         // DeleteHearing.DeleteHearing,
-          GetHearing.GetHearing,
-        //  GetAllHearing.GetAllHearing
+         GetAllHearing.GetAllHearing,
+         UpdateHearing.UpdateHearing,
+         GetHearing.GetHearing,
+         GetAllHearing.GetAllHearing,
+         pause(60),
+         DeleteHearing.DeleteHearing,
+         GetHearing.GetHearing,
+         GetAllHearing.GetAllHearing
         )
       }
 
@@ -121,7 +122,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(1000){
+     .repeat(500){
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
@@ -130,9 +131,22 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       }
 
     //Smoke Tests
-  setUp(RH.inject(rampUsers(1080).during(3400)))
+ // setUp(RUDH.inject(rampUsers(1).during(1)))
+  //   .protocols(httpProtocol)
+ //   .maxDuration(7200)
+
+    //Request Hearing Smoke Tests
+  //setUp(RH.inject(rampUsers(1080).during(3400)),
+ // (RUDH.inject(rampUsers(100).during(3200))))
+  //   .protocols(httpProtocol)
+  //  .maxDuration(3600)
+
+    //Request Hearing Smoke Tests
+  setUp(RH.inject(rampUsers(1700).during(3400)),
+  (RUDH.inject(rampUsers(250).during(3200))))
      .protocols(httpProtocol)
-    .maxDuration(3600)
+    .maxDuration(3800)
+
 
 }
 

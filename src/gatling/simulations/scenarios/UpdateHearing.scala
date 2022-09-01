@@ -17,9 +17,9 @@ object UpdateHearing {
   val MaxThinkTime = Environment.maxThinkTime
 
   val UpdateHearing = scenario(scenarioName = "020_UpdateHearing_Post")
-    .group("010_post_request_hearings") {
+    .group("020_update_request_hearings") {
     exec(http(requestName="put_update_hearings")
-      .put("/hearing/${hearingref}")
+      .put("/hearing/${hearingref2}")
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/bodies/UpdateHearing.json")).asJson
       .check(status.is(201))

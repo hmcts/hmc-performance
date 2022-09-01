@@ -1,12 +1,10 @@
 {
   "requestDetails" : {
-    "versionNumber" : 1
+    "versionNumber" : 2
+
   },
   "hearingDetails": {
-    "amendReasonCodes" : ["amend"],
-    "hearingChannels": [
-      "INTER"
-    ],
+    "amendReasonCode" : "LIST_ERR",
     "autolistFlag": true,
     "hearingType": "BBA3-DIR",
     "hearingWindow": {
@@ -27,6 +25,7 @@
       }
     ],
     "facilitiesRequired": [
+
     ],
     "listingComments": "Some listing comments",
     "hearingRequester": "alex.whyte@hmcts.net",
@@ -40,6 +39,7 @@
         "COMM"
       ],
       "panelPreferences": [
+
       ],
       "panelSpecialisms": [
       ]
@@ -48,7 +48,7 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "${caseref2}",
+    "caseRef": "1546516815889666",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
@@ -63,8 +63,7 @@
       },
       {
         "categoryType": "caseSubType",
-        "categoryValue": "BBA3-002CP",
-        "categoryParent": "BBA3-002"
+        "categoryValue": "BBA3-002CP"
       }
     ],
     "caseManagementLocationCode": "372653",
@@ -75,19 +74,22 @@
     {
       "partyID": "1",
       "partyType": "IND",
-      "partyRole": "APEL",
+      "partyRole": "DEF",
+
       "individualDetails": {
         "title": "Mr",
         "firstName": "Joe",
         "lastName": "Bloggs",
         "preferredHearingChannel": "INTER",
-        "interpreterLanguage": null,
+        "interpreterLanguage": "dan-dan",
         "otherReasonableAdjustmentDetails": "otherReasonableAdjustmentDetails val",
         "reasonableAdjustments": [
+
         ],
         "vulnerableFlag": true,
         "vulnerabilityDetails": "A bit vulnerable"
       }
     }
+
   ]
 }
