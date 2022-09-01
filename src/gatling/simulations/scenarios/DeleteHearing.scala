@@ -20,10 +20,10 @@ object DeleteHearing {
   val DeleteHearing = scenario(scenarioName = "030_DeleteHearing_delete")
     .group("030_DeleteHearing") {
       exec(http(requestName = "post_request_hearings")
-        .delete("/hearing/${hearingref}")
+        .delete("/hearing/${hearingref2}")
         .headers(Environment.commonHeader)
         .body(ElFileBody("bodies/bodies/DeleteHearing.json")).asJson
-        .check(status.is(202))
+        .check(status.is(200))
         .check(bodyString.saveAs("BODY3")))
         .exec {
           session =>
