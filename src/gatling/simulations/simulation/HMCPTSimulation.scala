@@ -131,9 +131,9 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       }
 
     //Smoke Tests
-  //setUp(CreateAppeal.inject(rampUsers(20).during(3600)))
- //    .protocols(httpProtocol)
-  // .maxDuration(7200)
+  setUp(RH.inject(rampUsers(1).during(1)))
+     .protocols(httpProtocol)
+   .maxDuration(7200)
 
     //Request Hearing Smoke Tests
   //setUp(RH.inject(rampUsers(1080).during(3400)),
@@ -142,10 +142,10 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   //  .maxDuration(3600)
 
     //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1700).during(3400)),
-  (RUDH.inject(rampUsers(250).during(3200))))
-     .protocols(httpProtocol)
-     .maxDuration(3800)
+ // setUp(RH.inject(rampUsers(1700).during(3400)),
+  //(RUDH.inject(rampUsers(250).during(3200))))
+ //    .protocols(httpProtocol)
+   //  .maxDuration(3800)
 
 
 }
