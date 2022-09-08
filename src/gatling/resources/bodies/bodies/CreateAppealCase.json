@@ -22,13 +22,13 @@
       "townCity":"Hairyfield",
       "county":"Kent",
       "postCode":"CF24 4AD",
-      "phoneNumber":"07411222222",
-      "emailAddress":"joe@bloggs.com"
+      "phoneNumber":"07398785050",
+      "emailAddress":"sscs_citizen_1@mailinator.com"
     }
   },
   "smsNotify":{
     "wantsSMSNotifications":true,
-    "smsNumber":"07411333333"
+    "smsNumber":"07398785050"
   },
   "hasRepresentative":false,
   "representative":{
