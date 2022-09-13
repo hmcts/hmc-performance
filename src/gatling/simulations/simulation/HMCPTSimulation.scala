@@ -11,7 +11,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   {
 
 	/*===============================================================================================
-	* Data Files used for Simlations
+	* Data Files used for Simulations
 	 ===============================================================================================*/
 
     val NINumberFeeder = csv("bodies/bodies/NINumber.csv").circular
@@ -122,7 +122,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(2000){
+     .repeat(1){
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
@@ -131,9 +131,9 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       }
 
     //Smoke Tests
- // setUp(CreateAppeal.inject(rampUsers(1).during(1)))
-   //  .protocols(httpProtocol)
-   //.maxDuration(7200)
+  setUp(CreateAppeal.inject(rampUsers(1).during(1)))
+     .protocols(httpProtocol)
+   .maxDuration(7200)
 
     //Request Hearing Smoke Tests
   //setUp(RH.inject(rampUsers(1080).during(3400)),
@@ -142,11 +142,11 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   //  .maxDuration(3600)
 
     //Request Hearing Smoke Tests
- setUp(RH.inject(rampUsers(6800).during(14200)),  //1700 3400
-  (RUDH.inject(rampUsers(1000).during(14200))),  //250 3200
-  (CreateAppeal.inject(rampUsers(1).during(1)))) //1
-     .protocols(httpProtocol)
-     .maxDuration(14600)
+ //setUp(RH.inject(rampUsers(1).during(1)),  //1700 3400
+ // (RUDH.inject(rampUsers(1).during(1))),  //250 3200
+  //(CreateAppeal.inject(rampUsers(1).during(1)))) //1
+//     .protocols(httpProtocol)
+ //    .maxDuration(3800)
 
 
 }
