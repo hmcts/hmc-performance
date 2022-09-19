@@ -39,7 +39,8 @@
   "caseDetails":
   {
     "hmctsServiceCode":"BBA3",
-    "caseDeepLink":"https://manage-case.demo.platform.hmcts.net/cases/case-details/1660823085841900","hmctsInternalCaseName":"Rhqdjpip Dbpyjpip",
+    "caseDeepLink":"https://manage-case.perftest.platform.hmcts.net/cases/case-details/${CaseRef1}",
+    "hmctsInternalCaseName":"Rhqdjpip Dbpyjpip",
     "publicCaseName":"Rhqdjpip Dbpyjpip",
     "caseAdditionalSecurityFlag":false,
     "caseInterpreterRequiredFlag":false,
