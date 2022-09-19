@@ -146,7 +146,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   (RUDH.inject(rampUsers(660).during(14200))), //250 3200
   (CreateAppeal.inject(rampUsers(1).during(1)))) //1
      .protocols(httpProtocol)
-     .maxDuration(3800)
+     .maxDuration(14600)
 
 //Soak test
 // RH 4400 / 14200
