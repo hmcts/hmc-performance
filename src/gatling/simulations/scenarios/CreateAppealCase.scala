@@ -18,7 +18,8 @@ object CreateAppealCase {
   val CreateAppealCase = scenario(scenarioName = "901_CreateAppeal_Post")
     .group("903_CreateAppealCase_Post") {
     exec(http(requestName="CreateAppealCase")
-      .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")
+     // .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")
+     .post("http://sscs-tribunals-api-demo.service.core-compute-demo.internal/appeals")
      // .headers(Environment.basicHeader)
       .body(ElFileBody("bodies/bodies/CreateAppealCase.json")).asJson
       .check(status.is(201))

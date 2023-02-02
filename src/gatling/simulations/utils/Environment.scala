@@ -13,8 +13,8 @@ object Environment {
  val IDAM_API_BASE_URI = "https://idam-api.perftest.platform.hmcts.net"
 
  val OAUTH_CLIENT = "xuiwebapp" //am_role_assignment // xuiwebapp / paybubble
- //val S2S_BASE_URI = "http://rpe-service-auth-provider-demo.service.core-compute-demo.internal/testing-support"
-val S2S_BASE_URI = "http://rpe-service-auth-provider-perftest.service.core-compute-perftest.internal/testing-support"
+ val S2S_BASE_URI = "http://rpe-service-auth-provider-demo.service.core-compute-demo.internal/testing-support"
+//val S2S_BASE_URI = "http://rpe-service-auth-provider-perftest.service.core-compute-perftest.internal/testing-support"
  val S2S_SERVICE_NAME = "hmc_hmi_inbound_adapter"
  //val S2S_SERVICE_NAME = "am_role_assignment_service"
  //val S2S_SERVICE_NAME = "aac_manage_case_assignment"
