@@ -6,7 +6,7 @@
  */
 
 properties([
-        pipelineTriggers([H7 07 * * 1-5')]),
+        pipelineTriggers([cron('H 08 * * 1-5')]),
         parameters([
                 string(name: 'ENVIRONMENT', defaultValue: 'Demo', description: 'Environment to test'),
                 string(name: 'URL_TO_TEST', defaultValue: 'https://ccpay-bubble-frontend-aat.service.core-compute-aat.internal', description: 'The URL you want to run these tests against'),
