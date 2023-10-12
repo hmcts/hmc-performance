@@ -16,8 +16,7 @@ object UpdateHearing {
   val MinThinkTime = Environment.minThinkTime
   val MaxThinkTime = Environment.maxThinkTime
 
-  val UpdateHearing = scenario(scenarioName = "020_UpdateHearing_Post")
-    .group("020_update_request_hearings") {
+  val UpdateHearing = group("020_update_request_hearings") {
     exec(http(requestName="put_update_hearings")
       .put("/hearing/${hearingref2}")
       .headers(Environment.commonHeader)

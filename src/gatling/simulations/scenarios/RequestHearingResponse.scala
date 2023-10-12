@@ -16,8 +16,7 @@ import utils.Environment
 
 object RequestHearingResponse {
 
-  val RequestHearingResponse = scenario(scenarioName = "060_RequestHearing_Response")
-  .group("060_post_request_hearings_response") {
+  val RequestHearingResponse = group("060_post_request_hearings_response") {
     exec(http("post_request_hearings_response")
       .post("http://hmc-hmi-inbound-adapter-demo.service.core-compute-demo.internal/listings/2000002018")
       .headers(Environment.inboundcommonHeader)

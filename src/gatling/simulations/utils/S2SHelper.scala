@@ -1,6 +1,5 @@
 package utils
 
-import com.warrenstrange.googleauth.GoogleAuthenticator
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import utils.Environment._
@@ -9,15 +8,6 @@ object  S2SHelper {
 
  val thinktime = 5
 
- val getOTP =
-  exec(
-   session => {
-    val otp: String = String.valueOf(new GoogleAuthenticator().getTotpPassword(FUNCTIONAL_TEST_CLIENT_S2S_TOKEN))
-    session.set("OTP", otp)
-
-   })
-
- val otpp="${OTP}"
 
  val S2SAuthToken =
 

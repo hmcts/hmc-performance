@@ -15,8 +15,7 @@ import java.io.{BufferedWriter, FileWriter}
 
 object CreateAppealCase {
 
-  val CreateAppealCase = scenario(scenarioName = "901_CreateAppeal_Post")
-    .group("903_CreateAppealCase_Post") {
+  val CreateAppealCase = group("901_CreateAppeal_Post") {
     exec(http(requestName="CreateAppealCase")
      // .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")
      .post("http://sscs-tribunals-api-demo.service.core-compute-demo.internal/appeals")
