@@ -16,8 +16,7 @@ object GetAllHearing {
   val MinThinkTime = Environment.minThinkTime
   val MaxThinkTime = Environment.maxThinkTime
 
-  val GetAllHearing = scenario(scenarioName = "050_GetHearing_get")
-    .group("050_GetAllHearings") {
+  val GetAllHearing = group("050_GetAllHearings") {
       exec(http(requestName = "get_all_hearing")
         .get("/hearings/${caseref2}?")
         .headers(Environment.commonHeader)

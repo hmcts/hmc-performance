@@ -17,8 +17,7 @@ object DeleteHearing {
   val MinThinkTime = Environment.minThinkTime
   val MaxThinkTime = Environment.maxThinkTime
 
-  val DeleteHearing = scenario(scenarioName = "030_DeleteHearing_delete")
-    .group("030_DeleteHearing") {
+  val DeleteHearing = group("030_DeleteHearing") {
       exec(http(requestName = "delete_request_hearings")
         .delete("/hearing/${hearingref2}")
         .headers(Environment.commonHeader)

@@ -14,8 +14,7 @@ import java.io.{BufferedWriter, FileWriter}
 
 object UserAssignment {
 
-  val UserAssignment = scenario(scenarioName = "902_UserAssignment_Post")
-    .group("901_UserAssignment_Post") {
+  val UserAssignment = group("901_UserAssignment_Post") {
     exec(http(requestName="UserAssignment")
       .post("http://am-role-assignment-service-perftest.service.core-compute-perftest.internal/am/role-assignments")
       .headers(Environment.commonHeader)

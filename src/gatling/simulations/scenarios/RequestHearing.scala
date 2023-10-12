@@ -19,8 +19,7 @@ object RequestHearing {
   val MinThinkTime = Environment.minThinkTime
   val MaxThinkTime = Environment.maxThinkTime
 
-  val RequestHearing = scenario(scenarioName = "010_RequestHearing_Post")
-  .group("010_post_request_hearings") {
+  val RequestHearing = group("010_post_request_hearings") {
     exec(http("post_request_hearings")
       .post("/hearing/")
       .headers(Environment.commonHeader)

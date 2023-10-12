@@ -14,8 +14,7 @@ import java.io.{BufferedWriter, FileWriter}
 
 object CreateHMCUser {
 
-  val CreateHMCUser = scenario(scenarioName = "901_CreateUser_Post")
-    .group("901_CreateUser_Post") {
+  val CreateHMCUser = group("901_CreateUser_Post") {
     exec(http(requestName="CreateUser")
       .post("https://idam-api.perftest.platform.hmcts.net/testing-support/accounts")
       .headers(Environment.basicHeader)
