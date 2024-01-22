@@ -17,8 +17,8 @@ object CreateAppealCase {
 
   val CreateAppealCase = group("901_CreateAppeal_Post") {
     exec(http(requestName="CreateAppealCase")
-     // .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")
-     .post("http://sscs-tribunals-api-demo.service.core-compute-demo.internal/appeals")
+      .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")
+     //.post("http://sscs-tribunals-api-aat.service.core-compute-aat.internal/appeals")
      // .headers(Environment.basicHeader)
       .body(ElFileBody("bodies/bodies/CreateAppealCase.json")).asJson
       .check(status.is(201))
@@ -31,11 +31,12 @@ object CreateAppealCase {
         session
     }
         .exec { session =>
-          val fw = new BufferedWriter(new FileWriter("HMCAppeals.csv", true))
+          val fw = new BufferedWriter(new FileWriter("HMCAppeals2.csv", true))
           try {
-            fw.write(session("Location").as[String] + "\r\n")
+           fw.write(session("Location").as[String] + "\r\n")
           } finally fw.close()
           session
         }
     }
+
 }
