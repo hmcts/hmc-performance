@@ -1,6 +1,6 @@
 {
   "requestDetails" : {
-    "versionNumber" : 1
+    "versionNumber" : "${versionnumber}"
   },
   "hearingDetails": {
     "amendReasonCodes" : ["amend"],

@@ -8,18 +8,28 @@
     "hearingType":"BBA3-SUB",
     "hearingWindow":
     {
-      "dateRangeStart":"2024-01-16"
+      "dateRangeStart":"2024-01-01",
+      "dateRangeEnd":"2024-02-01"
     },
-    "duration":5,
+    "duration":55,
     "nonStandardHearingDurationReasons":[],
     "hearingPriorityType":"Standard",
     "numberOfPhysicalAttendees":1,
     "hearingInWelshFlag":false,
     "hearingLocations":[
-      {
-        "locationType":"court",
-        "locationId":"372653"
-      }
+      {"locationType":"court","locationId":"700596"},
+      {"locationType":"court","locationId":"637145"},
+      {"locationType":"court","locationId":"379656"},
+      {"locationType":"court","locationId":"103147"},
+      {"locationType":"court","locationId":"198592"},
+      {"locationType":"court","locationId":"506742"},
+      {"locationType":"court","locationId":"545334"},
+      {"locationType":"court","locationId":"624161"},
+      {"locationType":"court","locationId":"815811"},
+      {"locationType":"court","locationId":"817113"},
+      {"locationType":"court","locationId":"330480"},
+      {"locationType":"court","locationId":"416742"},
+      {"locationType":"court","locationId":"490237"}
     ],
     "facilitiesRequired":[],
     "privateHearingRequiredFlag":false,
@@ -34,12 +44,12 @@
     "hearingIsLinkedFlag":false,
     "amendReasonCodes":[],
     "multiDayHearing":false,
-    "hearingChannels":["INTER"]
+    "hearingChannels":["ONPPRS"]
   },
   "caseDetails":
   {
     "hmctsServiceCode":"BBA3",
-    "caseDeepLink":"https://manage-case.perftest.platform.hmcts.net/cases/case-details/${CaseRef1}",
+    "caseDeepLink":"https://manage-case.aat.platform.hmcts.net/cases/case-details/${CaseRef1}",
     "hmctsInternalCaseName":"Rhqdjpip Dbpyjpip",
     "publicCaseName":"Rhqdjpip Dbpyjpip",
     "caseAdditionalSecurityFlag":false,
@@ -58,7 +68,7 @@
     "caseManagementLocationCode":"372653",
     "caseRef":"${CaseRef1}",
     "caserestrictedFlag":false,
-    "caseSLAStartDate":"2024-01-16"},
+    "caseSLAStartDate":"2024-01-01"},
   "partyDetails":
   [
     {
@@ -69,7 +79,7 @@
       {
         "firstName":"Performance",
         "lastName":"Tester",
-        "preferredHearingChannel":"INTER",
+        "preferredHearingChannel":"ONPPRS",
         "reasonableAdjustments":[],
         "vulnerableFlag":false,
         "hearingChannelEmail":[],

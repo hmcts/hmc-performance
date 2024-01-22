@@ -19,7 +19,7 @@ object DeleteHearing {
 
   val DeleteHearing = group("030_DeleteHearing") {
       exec(http(requestName = "delete_request_hearings")
-        .delete("/hearing/${hearingref2}")
+        .delete("/hearing/${hearingref3}")
         .headers(Environment.commonHeader)
         .body(ElFileBody("bodies/bodies/DeleteHearing.json")).asJson
         .check(status.is(200))
