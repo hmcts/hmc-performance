@@ -124,7 +124,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(5100){
+     .repeat(1000){
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
@@ -140,19 +140,19 @@ import utils.{Environment, IDAMHelper, S2SHelper}
  //  .maxDuration(30000)
 
     //Request Hearing Smoke Tests
- // setUp(RH.inject(rampUsers(300).during(600)))
+//  setUp(RH.inject(rampUsers(400).during(800)))
   //(RUDH.inject(rampUsers(1).during(1))))
- //    .protocols(httpProtocol)
+  //  .protocols(httpProtocol)
    // .maxDuration(3600)
 
 
 
     //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
+  setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3400
   (RUDH.inject(rampUsers(250).during(3200))), //250 3200
   (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
-     .maxDuration(3800)
+     .maxDuration(4000)
 
 
     //Request Hearing Smoke Tests
