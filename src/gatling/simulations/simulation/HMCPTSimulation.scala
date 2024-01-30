@@ -45,11 +45,11 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       exec(
       S2SHelper.S2SAuthToken,
       // IDAMHelper.getIdamToken,
-    //   GetHearing.GetHearing,
-     //  GetAllHearing.GetAllHearing,
-       RequestHearing.RequestHearing,
-    //   GetHearing.GetHearing,
-    //   GetAllHearing.GetAllHearing
+      GetHearing.GetHearing,
+      GetAllHearing.GetAllHearing,
+      RequestHearing.RequestHearing,
+      GetHearing.GetHearing,
+      GetAllHearing.GetAllHearing
        )
        }
     }
@@ -67,7 +67,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
           //  IDAMHelper.getIdamToken,
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing,
-        // UpdateHearing.UpdateHearing,
+         UpdateHearing.UpdateHearing,
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing,
          pause(60),
@@ -124,7 +124,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(191){
+     .repeat(5100){
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
@@ -140,19 +140,19 @@ import utils.{Environment, IDAMHelper, S2SHelper}
  //  .maxDuration(30000)
 
     //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1).during(1)),
-  (RUDH.inject(rampUsers(1).during(1))))
-     .protocols(httpProtocol)
-    .maxDuration(3600)
+ // setUp(RH.inject(rampUsers(300).during(600)))
+  //(RUDH.inject(rampUsers(1).during(1))))
+ //    .protocols(httpProtocol)
+   // .maxDuration(3600)
 
 
 
     //Request Hearing Smoke Tests
- // setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
- // (RUDH.inject(rampUsers(250).during(3200))), //250 3200
- // (CreateAppeal.inject(rampUsers(1).during(1)))) //1
- //    .protocols(httpProtocol)
- //    .maxDuration(3800)
+  setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
+  (RUDH.inject(rampUsers(250).during(3200))), //250 3200
+  (CreateAppeal.inject(rampUsers(1).during(100))))//1
+     .protocols(httpProtocol)
+     .maxDuration(3800)
 
 
     //Request Hearing Smoke Tests

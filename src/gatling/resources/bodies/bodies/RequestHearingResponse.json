@@ -1,21 +1,24 @@
 {
   "hearingResponse": {
     "meta": {
-      "transactionIdCaseHQ": "5e86dcdf-2a7e-4de7-99f4-9a0b0d6aa7d8",
-      "timestamp": "2022-04-20T08:57:36Z"
+      "transactionIdCaseHQ": "972e0f56-b881-43e4-a750-6d474ce17c58",
+      "timestamp": "2024-01-16T16:05:04Z"
     },
     "hearing": {
-      "listingRequestId": "AWLRID1009",
-      "hearingCaseIdHMCTS": "AW/API_200422",
-      "hearingCaseJurisdiction": {
-        "code": "BB",
-        "description": "Tribunals - Social Entitlement Chamber"
-      },
+      "hearingCaseIdHMCTS": "1704721829363678",
+      "hearingCaseVersionId": 1,
       "hearingCaseStatus": {
         "code": "100",
         "description": "Listed"
       },
-      "hearingIdCaseHQ": "446933758",
+      "hearingCaseJurisdiction": {
+        "code": "BB",
+        "description": "Social Entitlement Chamber"
+      },
+      "listingRequestId": "2900056823",
+      "hearingCreatedDate": "2024-01-16T15:59:00Z",
+      "hearingCreatedBy": "sysadm",
+      "hearingIdCaseHQ": "447386493",
       "hearingType": {
         "code": "500",
         "description": "Substantive"
@@ -24,35 +27,37 @@
         "code": "FIXED",
         "description": "Fixed - Unlikely to be moved"
       },
-      "hearingStartTime": "2022-04-20T09:00:00Z",
-      "hearingEndTime": "2022-04-20T10:00:00Z",
+      "hearingStartTime": "2024-01-19T17:20:00Z",
+      "hearingEndTime": "2024-01-19T17:25:00Z",
       "hearingPrivate": false,
       "hearingRisk": false,
       "hearingTranslatorRequired": false,
-      "hearingCreatedDate": "2022-04-20T08:56:04Z",
-      "hearingCreatedBy": "alex.whyte@hmcts.net",
       "hearingVenue": {
         "locationIdCaseHQ": "2700",
         "locationName": "Cardiff Social Security & Child Support Tribunal",
+        "locationType": {
+          "code": "3",
+          "description": "Owning Hearing Location"
+        },
         "locationRegion": {
-          "code": "6",
+          "code": "7",
           "description": "Wales"
         },
         "locationCluster": {
           "code": "WCF",
-          "description": "Wales Civil & Family"
+          "description": "Wales Civil, Family and Tribunals"
         },
         "locationReferences": [
-          {
-            "key": "EXTERNAL",
-            "value": "2700"
-          },
           {
             "key": "EPIMS",
             "value": "372653"
           },
           {
             "key": "EXTERNAL",
+            "value": "2700"
+          },
+          {
+            "key": "OUCODE",
             "value": "2700"
           }
         ]
@@ -61,17 +66,17 @@
         "locationIdCaseHQ": "2701",
         "locationName": "Cardiff SSCS - Hearing Room 01",
         "locationRegion": {
-          "code": "6",
+          "code": "7",
           "description": "Wales"
         },
         "locationCluster": {
           "code": "WCF",
-          "description": "Wales Civil & Family"
+          "description": "Wales Civil, Family and Tribunals"
         },
         "locationReferences": [
           {
-            "key": "EXTERNAL",
-            "value": "2701"
+            "key": "EPIMS",
+            "value": "372653"
           },
           {
             "key": "EXTERNAL",
@@ -79,28 +84,23 @@
           }
         ]
       },
+      "hearingVhStatus": "VH Not Required",
       "hearingAttendees": [
         {
-          "entityIdCaseHQ": "446935196",
+          "entityIdCaseHQ": "447385100",
           "entityId": "1",
           "entityType": "IND",
           "entityClass": "PERSON",
-          "entityName": "Mr Joe Bloggs",
+          "entityName": "Performance Tester",
           "entityYouth": false,
           "entityRole": {
-            "code": "DEF",
-            "description": "Defendant"
+            "code": "APEL",
+            "description": "Appellant"
           },
-          "hearingChannel" : {
-            "code": "channel type",
-            "description": "<description>"
+          "hearingChannel": {
+            "code": "INTER",
+            "description": "In Person"
           }
-
         }
-      ],
-      "hearingJohs": [],
-      "hearingSessions": [],
-      "hearingCaseVersionId": 1
-    }
-  }
-}
+      ]
+    },
