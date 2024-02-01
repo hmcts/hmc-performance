@@ -148,8 +148,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
     //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3400
-  (RUDH.inject(rampUsers(250).during(3200))), //250 3200
+  setUp(RH.inject(rampUsers(10000).during(3300)),  //1700 3400
+  (RUDH.inject(rampUsers(1250).during(3200))), //250 3200
   (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
      .maxDuration(4000)
