@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bd1711a-040b-4a10-bcde-b5bbf251bcf7" name="Default Changelist" comment="HMC Hearing Response">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileGatlingScala.analysis" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileGatlingScala.analysis" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gatling/simulations/simulation/HMCPTSimulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/gatling/simulations/simulation/HMCPTSimulation.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -45,14 +45,16 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       exec(
       S2SHelper.S2SAuthToken,
       // IDAMHelper.getIdamToken,
-      .repeat(6){
+      repeat(6){
+      exec(
       GetHearing.GetHearing,
       GetAllHearing.GetAllHearing,
       RequestHearing.RequestHearing,
       GetHearing.GetHearing,
       GetAllHearing.GetAllHearing
-       )
+      )
        }
+       )
     }
     }
 
@@ -67,7 +69,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
-         .repeat(5){
+         repeat(6){
+         exec(
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing,
          UpdateHearing.UpdateHearing,
@@ -77,8 +80,9 @@ import utils.{Environment, IDAMHelper, S2SHelper}
          DeleteHearing.DeleteHearing,
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing
+         )
+         }
         )
-      }
       }
 
 // This scenarios Gets a Hearing and Gets all hearings
