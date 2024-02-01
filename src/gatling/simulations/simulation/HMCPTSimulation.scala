@@ -54,6 +54,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
        )
        }
     }
+    }
 
 
     //This scenario Update and Delete Hearing and within each action it Views all hearing and views a single hearing
@@ -66,6 +67,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
+         .repeat(5){
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing,
          UpdateHearing.UpdateHearing,
@@ -76,6 +78,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing
         )
+      }
       }
 
 // This scenarios Gets a Hearing and Gets all hearings
