@@ -69,7 +69,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
-         repeat(6){
+         repeat(5){
          exec(
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing,
@@ -132,7 +132,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(1000){
+     .repeat(3300){
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
@@ -157,10 +157,10 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //Request Hearing Smoke Tests
   setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3400
-  (RUDH.inject(rampUsers(1250).during(3200))), //250 3200
+  (RUDH.inject(rampUsers(250).during(3200))), //250 3200
   (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
-     .maxDuration(4000)
+     .maxDuration(10000)
 
 
     //Request Hearing Smoke Tests
