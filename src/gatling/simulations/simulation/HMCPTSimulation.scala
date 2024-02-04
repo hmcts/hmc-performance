@@ -40,22 +40,22 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       .feed(requesthearingFeeder)
       .feed(hearingFeeder)
       .repeat(1){
-      exitBlockOnFail
-      {
+    //  exitBlockOnFail
+  //    {
       exec(
       S2SHelper.S2SAuthToken,
       // IDAMHelper.getIdamToken,
       repeat(6){
       exec(
-      GetHearing.GetHearing,
-      GetAllHearing.GetAllHearing,
+    //  GetHearing.GetHearing,
+    //  GetAllHearing.GetAllHearing,
       RequestHearing.RequestHearing,
       GetHearing.GetHearing,
       GetAllHearing.GetAllHearing
       )
        }
        )
-    }
+   // }
     }
 
 
@@ -64,18 +64,18 @@ import utils.{Environment, IDAMHelper, S2SHelper}
     val RUDH = scenario("RequestUpdateDeleteHearing")
       .feed(updatehearingFeeder)
       .feed(deletehearingFeeder)
-      .exitBlockOnFail
-      {
+     // .exitBlockOnFail
+    //  {
         exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
          repeat(5){
          exec(
-         GetHearing.GetHearing,
-         GetAllHearing.GetAllHearing,
+        // GetHearing.GetHearing,
+        // GetAllHearing.GetAllHearing,
          UpdateHearing.UpdateHearing,
-         GetHearing.GetHearing,
-         GetAllHearing.GetAllHearing,
+        // GetHearing.GetHearing,
+        // GetAllHearing.GetAllHearing,
          pause(60),
          DeleteHearing.DeleteHearing,
          GetHearing.GetHearing,
@@ -83,7 +83,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
          )
          }
         )
-      }
+   //   }
 
 // This scenarios Gets a Hearing and Gets all hearings
     val GH = scenario("GetHearing")
