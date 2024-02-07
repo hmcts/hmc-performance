@@ -45,7 +45,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       exec(
       S2SHelper.S2SAuthToken,
       // IDAMHelper.getIdamToken,
-      repeat(3){
+      repeat(2){
       exec(
     //  GetHearing.GetHearing,
     //  GetAllHearing.GetAllHearing,
@@ -69,7 +69,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         .exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
-         repeat(3){
+         repeat(2){
          exec(
         // GetHearing.GetHearing,
         // GetAllHearing.GetAllHearing,
