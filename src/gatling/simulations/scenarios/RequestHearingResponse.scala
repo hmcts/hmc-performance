@@ -17,18 +17,18 @@ import utils.Environment
 object RequestHearingResponse {
 
   val RequestHearingResponse = group("060_post_request_hearings_response") {
-    exec(http("post_request_hearings_response")
-      .post("http://hmc-hmi-inbound-adapter-demo.service.core-compute-demo.internal/listings/2000002018")
+    exec(http("put_request_hearings_response")
+      .put("https://hmi-apim.demo.platform.hmcts.net/hmi/hearings/${CivilHearingID}?")
       .headers(Environment.inboundcommonHeader)
       .body(ElFileBody("bodies/bodies/RequestHearingResponse.json")).asJson
-      .check(status.is(201))
+      .check(status.is(202))
       //.check (regex ("\"hearingRequestID\":(.*?)").saveAs ("hearingRequestID"))
-      .check (regex ("\"status\":").saveAs ("hearingstatus"))
-      .check(jsonPath("$..hearingRequestID").optional.saveAs("hearingRequestID"))
-      .check(jsonPath("$..status").optional.saveAs("status"))
-      .check(jsonPath("$..timeStamp").optional.saveAs("timeStamp"))
-      .check(jsonPath("$..versionNumber").optional.saveAs("versionNumber"))
-      .check(bodyString.saveAs("BODY1")))
+      //.check (regex ("\"status\":").saveAs ("hearingstatus"))
+      //.check(jsonPath("$..hearingRequestID").optional.saveAs("hearingRequestID"))
+      //.check(jsonPath("$..status").optional.saveAs("status"))
+      //.check(jsonPath("$..timeStamp").optional.saveAs("timeStamp"))
+      //.check(jsonPath("$..versionNumber").optional.saveAs("versionNumber"))
+        .check(bodyString.saveAs("BODY1")))
     .exec {
       session =>
         println(session("BODY1").as[String])
