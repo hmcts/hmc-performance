@@ -1,106 +1,139 @@
 {
   "hearingResponse": {
     "meta": {
-      "transactionIdCaseHQ": "972e0f56-b881-43e4-a750-6d474ce17c58",
-      "timestamp": "2024-01-16T16:05:04Z"
+      "transactionIdCaseHQ": "3b134060-e613-4d59-955e-3bb66bc41e14",
+      "timestamp": "2024-02-07T16:11:00Z"
     },
     "hearing": {
-      "hearingCaseIdHMCTS": "1704721829363678",
+      "hearingCaseIdHMCTS": "${CivilCaseID}",
       "hearingCaseVersionId": 1,
       "hearingCaseStatus": {
         "code": "100",
         "description": "Listed"
       },
       "hearingCaseJurisdiction": {
-        "code": "BB",
-        "description": "Social Entitlement Chamber"
+        "code": "AA",
+        "description": "Civil"
       },
-      "listingRequestId": "2900056823",
-      "hearingCreatedDate": "2024-01-16T15:59:00Z",
-      "hearingCreatedBy": "sysadm",
-      "hearingIdCaseHQ": "447386493",
+      "listingRequestId": "${CivilHearingID}",
+      "hearingCreatedDate": "2024-02-07T16:10:47Z",
+      "hearingCreatedBy": "nazee.kadiu1@hmcts.net",
+      "hearingIdCaseHQ": "447639783",
       "hearingType": {
-        "code": "500",
-        "description": "Substantive"
+        "code": "4005",
+        "description": "Application Hearings (Damages)"
       },
       "hearingStatus": {
         "code": "FIXED",
         "description": "Fixed - Unlikely to be moved"
       },
-      "hearingStartTime": "2024-01-19T17:20:00Z",
-      "hearingEndTime": "2024-01-19T17:25:00Z",
+      "hearingStartTime": "2024-02-09T10:00:00Z",
+      "hearingEndTime": "2024-02-09T10:45:00Z",
       "hearingPrivate": false,
       "hearingRisk": false,
       "hearingTranslatorRequired": false,
+      "hearingLanguage": "eng",
       "hearingVenue": {
-        "locationIdCaseHQ": "2700",
-        "locationName": "Cardiff Social Security & Child Support Tribunal",
-        "locationType": {
-          "code": "3",
-          "description": "Owning Hearing Location"
-        },
+        "locationIdCaseHQ": "24000",
+        "locationName": "Clerkenwell and Shoreditch County and Family Court",
         "locationRegion": {
-          "code": "7",
-          "description": "Wales"
+          "code": "1",
+          "description": "London"
         },
         "locationCluster": {
-          "code": "WCF",
-          "description": "Wales Civil, Family and Tribunals"
+          "code": "LCF",
+          "description": "London Civil and Family"
         },
         "locationReferences": [
           {
             "key": "EPIMS",
-            "value": "372653"
+            "value": "739514"
           },
           {
             "key": "EXTERNAL",
-            "value": "2700"
-          },
-          {
-            "key": "OUCODE",
-            "value": "2700"
+            "value": "24000"
           }
         ]
       },
       "hearingRoom": {
-        "locationIdCaseHQ": "2701",
-        "locationName": "Cardiff SSCS - Hearing Room 01",
+        "locationIdCaseHQ": "24001",
+        "locationName": "Clerkenwell and Shoreditch Courtroom 01",
         "locationRegion": {
-          "code": "7",
-          "description": "Wales"
+          "code": "1",
+          "description": "London"
         },
         "locationCluster": {
-          "code": "WCF",
-          "description": "Wales Civil, Family and Tribunals"
+          "code": "LCF",
+          "description": "London Civil and Family"
         },
         "locationReferences": [
           {
             "key": "EPIMS",
-            "value": "372653"
+            "value": "739514"
           },
           {
             "key": "EXTERNAL",
-            "value": "2701"
+            "value": "24001"
           }
         ]
       },
       "hearingVhStatus": "VH Not Required",
       "hearingAttendees": [
         {
-          "entityIdCaseHQ": "447385100",
-          "entityId": "1",
-          "entityType": "IND",
-          "entityClass": "PERSON",
-          "entityName": "Performance Tester",
-          "entityYouth": false,
+          "entityIdCaseHQ": "447639757",
+          "entityId": "4dc8ce4f-96e4-49",
+          "entityType": "ORG",
+          "entityClass": "ORG",
+          "entityName": "claimnat company",
           "entityRole": {
-            "code": "APEL",
-            "description": "Appellant"
-          },
-          "hearingChannel": {
-            "code": "INTER",
-            "description": "In Person"
+            "code": "CLAI",
+            "description": "Claimant"
+          }
+        },
+        {
+          "entityIdCaseHQ": "447639759",
+          "entityId": "94f87736-0d00-46",
+          "entityType": "ORG",
+          "entityClass": "ORG",
+          "entityName": "MeqGf DefcompanyName",
+          "entityRole": {
+            "code": "DEFE",
+            "description": "Defendant"
+          }
+        },
+        {
+          "entityIdCaseHQ": "447639758",
+          "entityId": "TACAJW6",
+          "entityType": "ORG",
+          "entityClass": "ORG",
+          "entityName": "Civil Damages Claims - Organisation 1",
+          "entityRole": {
+            "code": "LGRP",
+            "description": "Legal Representative"
+          }
+        },
+        {
+          "entityIdCaseHQ": "447639760",
+          "entityId": "MEVCCQF",
+          "entityType": "ORG",
+          "entityClass": "ORG",
+          "entityName": "Civil Damages Claims - Organisation 2",
+          "entityRole": {
+            "code": "LGRP",
+            "description": "Legal Representative"
           }
         }
+      ],
+      "hearingJohs": [
+        {
+          "johCode": "",
+          "johType": {
+            "code": "AC",
+            "description": "Administrative Court"
+          },
+          "isPresiding": true
+        }
       ]
-    },
+    }
+  }
+}

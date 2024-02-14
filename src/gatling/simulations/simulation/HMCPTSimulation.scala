@@ -21,6 +21,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
     val hearingFeeder = csv("bodies/bodies/Hearing.csv").circular
     val updatehearingFeeder = csv("bodies/bodies/UpdateHearing.csv").circular
     val deletehearingFeeder = csv("bodies/bodies/DeleteHearing.csv").circular
+    val CivilResponsehearingFeeder = csv("bodies/bodies/CivilRequestHearingResponse.csv").circular
 
     val httpProtocol = http.baseUrl (url = Environment.baseURL)
     val BashURL = Environment.baseURL
@@ -100,7 +101,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //This scenario Views all hearing and views single hearing
     val RHR = scenario("RequestHearingResponse")
-      .feed(hearingFeeder)
+      .feed(CivilResponsehearingFeeder)
       .exitBlockOnFail
       {
         exec(
@@ -155,12 +156,12 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 
-    //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3400
-  (RUDH.inject(rampUsers(250).during(3300))), //250 3200
-  (CreateAppeal.inject(rampUsers(1).during(100))))//1
-     .protocols(httpProtocol)
-     .maxDuration(4000)
+    //CIVIL HMC Request Hearing Peak/Stress Test
+ // setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3400
+//  (RUDH.inject(rampUsers(250).during(3300))), //250 3200
+ // (CreateAppeal.inject(rampUsers(1).during(100))))//1
+ //    .protocols(httpProtocol)
+  //   .maxDuration(4000)
 
 
     //Request Hearing Smoke Tests
@@ -169,6 +170,13 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   //setUp(CreateAppeal.inject(rampUsers(1).during(1))) //1
    //  .protocols(httpProtocol)
     // .maxDuration(7200)
+
+
+
+
+     setUp(RHR.inject(rampUsers(1).during(1)))
+         .protocols(httpProtocol)
+      .maxDuration(30000)
 
 //Soak test
 // RH 4400 / 14200
