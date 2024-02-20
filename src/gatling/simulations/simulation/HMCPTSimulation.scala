@@ -156,10 +156,10 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 
-    //CIVIL HMC Request Hearing Peak/Stress Test
+   // CIVIL HMC Request Hearing Peak/Stress Test
   setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3400
-  (RUDH.inject(rampUsers(250).during(3300))), //250 3200
-  (CreateAppeal.inject(rampUsers(1).during(100))))//1
+    (RUDH.inject(rampUsers(250).during(3300))), //250 3200
+    (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
     .maxDuration(4000)
 
@@ -174,10 +174,10 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 
-  //   setUp(RHR.inject(rampUsers(1).during(1)))
-   //      .protocols(httpProtocol)
-    //  .maxDuration(30000)
-
+    /* setUp(RHR.inject(rampUsers(98).during(600)))
+         .protocols(httpProtocol)
+      .maxDuration(30000)
+*/
 //Soak test
 // RH 4400 / 14200
 //RUDH 660 /14200
