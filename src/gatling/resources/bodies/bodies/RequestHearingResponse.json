@@ -2,7 +2,7 @@
   "hearingResponse": {
     "meta": {
       "transactionIdCaseHQ": "3b134060-e613-4d59-955e-3bb66bc41e14",
-      "timestamp": "2024-02-07T16:11:00Z"
+      "timestamp": "2024-03-07T16:11:00Z"
     },
     "hearing": {
       "hearingCaseIdHMCTS": "${CivilCaseID}",
@@ -16,7 +16,7 @@
         "description": "Civil"
       },
       "listingRequestId": "${CivilHearingID}",
-      "hearingCreatedDate": "2024-02-07T16:10:47Z",
+      "hearingCreatedDate": "2024-03-07T16:10:47Z",
       "hearingCreatedBy": "nazee.kadiu1@hmcts.net",
       "hearingIdCaseHQ": "447639783",
       "hearingType": {
@@ -27,8 +27,8 @@
         "code": "FIXED",
         "description": "Fixed - Unlikely to be moved"
       },
-      "hearingStartTime": "2024-02-09T10:00:00Z",
-      "hearingEndTime": "2024-02-09T10:45:00Z",
+      "hearingStartTime": "2024-03-09T10:00:00Z",
+      "hearingEndTime": "2024-03-09T10:45:00Z",
       "hearingPrivate": false,
       "hearingRisk": false,
       "hearingTranslatorRequired": false,
