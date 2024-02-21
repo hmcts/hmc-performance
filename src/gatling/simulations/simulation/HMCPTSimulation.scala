@@ -48,8 +48,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       // IDAMHelper.getIdamToken,
       repeat(2){
       exec(
-    //  GetHearing.GetHearing,
-    //  GetAllHearing.GetAllHearing,
+      GetHearing.GetHearing,
+      GetAllHearing.GetAllHearing,
       RequestHearing.RequestHearing,
       GetHearing.GetHearing,
       GetAllHearing.GetAllHearing
@@ -72,15 +72,15 @@ import utils.{Environment, IDAMHelper, S2SHelper}
           //  IDAMHelper.getIdamToken,
          repeat(2){
          exec(
-        // GetHearing.GetHearing,
-        // GetAllHearing.GetAllHearing,
+         GetHearing.GetHearing,
+         GetAllHearing.GetAllHearing,
          UpdateHearing.UpdateHearing,
         // GetHearing.GetHearing,
         // GetAllHearing.GetAllHearing,
          pause(60),
          DeleteHearing.DeleteHearing,
-         GetHearing.GetHearing,
-         GetAllHearing.GetAllHearing
+     //    GetHearing.GetHearing,
+     //    GetAllHearing.GetAllHearing
          )
          }
         )
@@ -156,10 +156,10 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 
-   // CIVIL HMC Request Hearing Peak/Stress Test
-  setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3400
-    (RUDH.inject(rampUsers(250).during(3300))), //250 3200
-    (CreateAppeal.inject(rampUsers(1).during(100))))//1
+  //  CIVIL HMC Request Hearing Peak/Stress Test
+  setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3300
+    (RUDH.inject(rampUsers(250).during(3200))), //250 3200
+   (CreateAppeal.inject(rampUsers(1).during(100))))//1*/
      .protocols(httpProtocol)
     .maxDuration(4000)
 
@@ -173,8 +173,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 
-
-    /* setUp(RHR.inject(rampUsers(98).during(600)))
+/*
+     setUp(RHR.inject(rampUsers(97).during(600)))
          .protocols(httpProtocol)
       .maxDuration(30000)
 */
