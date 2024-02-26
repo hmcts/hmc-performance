@@ -46,7 +46,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       exec(
       S2SHelper.S2SAuthToken,
       // IDAMHelper.getIdamToken,
-      repeat(2){
+      repeat(1){
       exec(
       GetHearing.GetHearing,
       GetAllHearing.GetAllHearing,
@@ -70,17 +70,17 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         .exec(
           S2SHelper.S2SAuthToken,
           //  IDAMHelper.getIdamToken,
-         repeat(2){
+         repeat(1){
          exec(
          GetHearing.GetHearing,
          GetAllHearing.GetAllHearing,
          UpdateHearing.UpdateHearing,
-        // GetHearing.GetHearing,
-        // GetAllHearing.GetAllHearing,
+         GetHearing.GetHearing,
+         GetAllHearing.GetAllHearing,
          pause(60),
          DeleteHearing.DeleteHearing,
-     //    GetHearing.GetHearing,
-     //    GetAllHearing.GetAllHearing
+         GetHearing.GetHearing,
+         GetAllHearing.GetAllHearing
          )
          }
         )
@@ -133,7 +133,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(3300){
+     .repeat(2109){
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
@@ -144,10 +144,10 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
     //Smoke Tests
- // setUp(CreateAppeal.inject(rampUsers(1).during(1)))
-   //  .protocols(httpProtocol)
- //  .maxDuration(30000)
-
+ /* setUp(CreateAppeal.inject(rampUsers(1).during(1)))
+     .protocols(httpProtocol)
+   .maxDuration(30000)
+*/
     //Request Hearing Smoke Tests
 //  setUp(RH.inject(rampUsers(400).during(800)))
   //(RUDH.inject(rampUsers(1).during(1))))
@@ -159,7 +159,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   //  CIVIL HMC Request Hearing Peak/Stress Test
   setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3300
     (RUDH.inject(rampUsers(250).during(3200))), //250 3200
-   (CreateAppeal.inject(rampUsers(1).during(100))))//1*/
+   (CreateAppeal.inject(rampUsers(1).during(100))),//1
+    (RHR.inject(rampUsers(949).during(600))))
      .protocols(httpProtocol)
     .maxDuration(4000)
 
@@ -174,7 +175,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 /*
-     setUp(RHR.inject(rampUsers(97).during(600)))
+     setUp(RHR.inject(rampUsers(949).during(600)))
          .protocols(httpProtocol)
       .maxDuration(30000)
 */
