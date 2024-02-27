@@ -159,8 +159,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
   //  CIVIL HMC Request Hearing Peak/Stress Test
   setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3300
     (RUDH.inject(rampUsers(250).during(3200))), //250 3200
-   (CreateAppeal.inject(rampUsers(1).during(100))),//1
-    (RHR.inject(rampUsers(949).during(600))))
+   (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
     .maxDuration(4000)
 

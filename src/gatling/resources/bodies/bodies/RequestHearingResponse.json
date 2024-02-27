@@ -6,7 +6,7 @@
     },
     "hearing": {
       "hearingCaseIdHMCTS": "${CivilCaseID}",
-      "hearingCaseVersionId": 2,
+      "hearingCaseVersionId": "1",
       "hearingCaseStatus": {
         "code": "100",
         "description": "Listed"
