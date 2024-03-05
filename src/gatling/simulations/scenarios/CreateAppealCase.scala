@@ -31,7 +31,7 @@ object CreateAppealCase {
         session
     }
         .exec { session =>
-          val fw = new BufferedWriter(new FileWriter("HMCAppeals2.csv", true))
+          val fw = new BufferedWriter(new FileWriter("HMCAppeals3.csv", true))
           try {
            fw.write(session("Location").as[String] + "\r\n")
           } finally fw.close()

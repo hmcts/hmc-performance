@@ -156,25 +156,26 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 
-  //  CIVIL HMC Request Hearing Peak/Stress Test
-  setUp(RH.inject(rampUsers(1700).during(3300)),  //1700 3300
-    (RUDH.inject(rampUsers(250).during(3200))), //250 3200
-   (CreateAppeal.inject(rampUsers(1).during(100))))//1
-     .protocols(httpProtocol)
-    .maxDuration(4000)
+//    CIVIL HMC Request Hearing Peak/Stress Test
+  //setUp(
+    //(RH.inject(rampUsers(1700).during(3300)),  //1700 3300
+    //(RUDH.inject(rampUsers(250).during(3200))), //250 3200
+   //(CreateAppeal.inject(rampUsers(1).during(100))))//1
+  //   .protocols(httpProtocol)
+   // .maxDuration(4000)
 
 
     //Request Hearing Smoke Tests
-  //setUp(RH.inject(rampUsers(298).during(1200)))  //1700 3400
-  //  setUp(RUDH.inject(rampUsers(1).during(1))) //250 3200
-  //setUp(CreateAppeal.inject(rampUsers(1).during(1))) //1
-   //  .protocols(httpProtocol)
-    // .maxDuration(7200)
+  setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
+    (RUDH.inject(rampUsers(250).during(3200))), //250 3200
+  (CreateAppeal.inject(rampUsers(1).during(1)))) //1
+     .protocols(httpProtocol)
+     .maxDuration(4000)
 
 
 
 /*
-     setUp(RHR.inject(rampUsers(949).during(600)))
+     setUp(RHR.inject(rampUsers(1887).during(1200)))
          .protocols(httpProtocol)
       .maxDuration(30000)
 */
