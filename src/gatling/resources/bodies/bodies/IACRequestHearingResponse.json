@@ -1,0 +1,139 @@
+{
+  "hearingResponse": {
+    "meta": {
+      "transactionIdCaseHQ": "d8dfc9e4-abb3-473d-896c-5032a7546beb",
+      "timestamp": "2024-03-07T16:02:00Z"
+    },
+    "hearing": {
+      "hearingCaseIdHMCTS": "${IACCaseID}",
+      "hearingCaseVersionId": 1,
+      "hearingCaseStatus": {
+        "code": "100",
+        "description": "Listed"
+      },
+      "hearingCaseJurisdiction": {
+        "code": "BF",
+        "description": "Immigration and Asylum Chamber"
+      },
+      "listingRequestId": "${IACHearingID}",
+      "hearingCreatedDate": "2024-03-07T16:01:10Z",
+      "hearingCreatedBy": "nazee.kadiu1@hmcts.net",
+      "hearingIdCaseHQ": "447958989",
+      "hearingType": {
+        "code": "5003",
+        "description": "IAC Bail"
+      },
+      "hearingStatus": {
+        "code": "FIXED",
+        "description": "Fixed - Unlikely to be moved"
+      },
+      "hearingStartTime": "2024-03-18T10:00:00Z",
+      "hearingEndTime": "2024-03-18T11:00:00Z",
+      "hearingPrivate": false,
+      "hearingRisk": false,
+      "hearingTranslatorRequired": false,
+      "hearingLanguage": "eng",
+      "hearingVenue": {
+        "locationIdCaseHQ": "48000",
+        "locationName": "Birmingham Civil Justice Centre",
+        "locationRegion": {
+          "code": "2",
+          "description": "Midlands"
+        },
+        "locationCluster": {
+          "code": "WMW",
+          "description": "West Mids and Warwickshire Civil, Family and Tribs"
+        },
+        "locationReferences": [
+          {
+            "key": "EPIMS",
+            "value": "231596"
+          },
+          {
+            "key": "EXTERNAL",
+            "value": "48000"
+          },
+          {
+            "key": "OUCODE",
+            "value": "48000"
+          }
+        ]
+      },
+      "hearingRoom": {
+        "locationIdCaseHQ": "48003",
+        "locationName": "Birmingham CJC Courtroom 104 (Floor 1)",
+        "locationRegion": {
+          "code": "2",
+          "description": "Midlands"
+        },
+        "locationCluster": {
+          "code": "WMW",
+          "description": "West Mids and Warwickshire Civil, Family and Tribs"
+        },
+        "locationReferences": [
+          {
+            "key": "EXTERNAL",
+            "value": "48003"
+          }
+        ]
+      },
+      "hearingVhStatus": "VH Not Required",
+      "hearingAttendees": [
+        {
+          "entityIdCaseHQ": "447954719",
+          "entityId": "fd486723-cfde-4c77-8376-c888ab422c15",
+          "entityType": "IND",
+          "entityClass": "PERSON",
+          "entityName": "fyguhij fyvgbuhnj",
+          "entityYouth": false,
+          "entityRole": {
+            "code": "APPL",
+            "description": "Applicant"
+          },
+          "hearingChannel": {
+            "code": "VIDVHS",
+            "description": "Video - Video Hearing Service (VHS)"
+          }
+        },
+        {
+          "entityIdCaseHQ": "447954723",
+          "entityId": "hbnjmk",
+          "entityType": "ORG",
+          "entityClass": "ORG",
+          "entityName": "Home Office Presenting Officer",
+          "entityRole": {
+            "code": "RESP",
+            "description": "Respondent"
+          }
+        },
+        {
+          "entityIdCaseHQ": "447954720",
+          "entityId": "6b08abce-a473-4e4d-af95-7a7c09c7b229",
+          "entityType": "IND",
+          "entityClass": "PERSON",
+          "entityName": "fvgbhjknm cgvfh bgjnk",
+          "entityYouth": false,
+          "entityRole": {
+            "code": "LGRP",
+            "description": "Legal Representative"
+          },
+          "hearingChannel": {
+            "code": "VIDVHS",
+            "description": "Video - Video Hearing Service (VHS)"
+          }
+        },
+        {
+          "entityIdCaseHQ": "447954724",
+          "entityId": "4eb3ed22-20b0-4aa7-96cc-0a9578c4ed78",
+          "entityType": "ORG",
+          "entityClass": "ORG",
+          "entityName": "dcfvgybuhnj",
+          "entityRole": {
+            "code": "LGRP",
+            "description": "Legal Representative"
+          }
+        }
+      ]
+    }
+  }
+}
