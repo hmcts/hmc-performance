@@ -2,7 +2,7 @@ package simulation
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse,CreateHMCUser,UserAssignment,CreateAppealCase}
+import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse,CreateHMCUser,UserAssignment,CreateAppealCase,IACRequestHearingResponse}
 import utils.{Environment, IDAMHelper, S2SHelper}
 
 
@@ -22,6 +22,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
     val updatehearingFeeder = csv("bodies/bodies/UpdateHearing.csv").circular
     val deletehearingFeeder = csv("bodies/bodies/DeleteHearing.csv").circular
     val CivilResponsehearingFeeder = csv("bodies/bodies/CivilRequestHearingResponse.csv").circular
+    val IACResponsehearingFeeder = csv("bodies/bodies/IACRequestHearingResponse.csv").circular
 
     val httpProtocol = http.baseUrl (url = Environment.baseURL)
     val BashURL = Environment.baseURL
@@ -111,6 +112,18 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         )
       }
 
+    //This scenario Views all hearing and views single hearing
+    val IACRHR = scenario("IACRequestHearingResponse")
+      .feed(IACResponsehearingFeeder)
+      .exitBlockOnFail
+      {
+        exec(
+          S2SHelper.S2SAuthToken,
+          //  IDAMHelper.getIdamToken,
+          IACRequestHearingResponse.IACRequestHearingResponse
+        )
+      }
+
 
     //CreateUser
     val CreateUser = scenario("CreateUser")
@@ -157,28 +170,35 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 //    CIVIL HMC Request Hearing Peak/Stress Test
-  //setUp(
-    //(RH.inject(rampUsers(1700).during(3300)),  //1700 3300
-    //(RUDH.inject(rampUsers(250).during(3200))), //250 3200
-   //(CreateAppeal.inject(rampUsers(1).during(100))))//1
-  //   .protocols(httpProtocol)
-   // .maxDuration(4000)
+  setUp(
+    (RH.inject(rampUsers(1700).during(3300))),  //1700 3300
+    (RUDH.inject(rampUsers(250).during(3200))), //250 3200
+   (CreateAppeal.inject(rampUsers(1).during(100))))//1
+     .protocols(httpProtocol)
+    .maxDuration(4000)
 
 
     //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
+ /* setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
     (RUDH.inject(rampUsers(250).during(3200))), //250 3200
   (CreateAppeal.inject(rampUsers(1).during(1)))) //1
      .protocols(httpProtocol)
      .maxDuration(4000)
-
+*/
 
 
 /*
-     setUp(RHR.inject(rampUsers(1887).during(1200)))
+     setUp(RHR.inject(rampUsers(1952).during(2400)))
          .protocols(httpProtocol)
       .maxDuration(30000)
 */
+/*
+    setUp(IACRHR.inject(rampUsers(50).during(400)))
+      .protocols(httpProtocol)
+      .maxDuration(30000)
+*/
+
+
 //Soak test
 // RH 4400 / 14200
 //RUDH 660 /14200
