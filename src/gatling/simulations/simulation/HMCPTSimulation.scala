@@ -187,12 +187,12 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 /*
-     setUp(RHR.inject(rampUsers(1918).during(2400)))
+     setUp(RHR.inject(rampUsers(1864).during(2400)))
          .protocols(httpProtocol)
       .maxDuration(30000)
 */
-/*
-    setUp(IACRHR.inject(rampUsers(50).during(300)))
+
+ /*   setUp(IACRHR.inject(rampUsers(50).during(300)))
       .protocols(httpProtocol)
       .maxDuration(30000)
 */
