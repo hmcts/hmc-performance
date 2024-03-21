@@ -10,8 +10,8 @@
     "autolistFlag": true,
     "hearingType": "BBA3-DIR",
     "hearingWindow": {
-      "dateRangeStart": "2022-05-12",
-      "dateRangeEnd": "2023-05-12"
+      "dateRangeStart": "2024-05-12",
+      "dateRangeEnd": "2024-05-12"
     },
     "duration": 60,
     "nonStandardHearingDurationReasons": [

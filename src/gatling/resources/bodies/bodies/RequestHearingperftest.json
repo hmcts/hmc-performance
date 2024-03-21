@@ -8,7 +8,7 @@
     "hearingType":"BBA3-SUB",
     "hearingWindow":
     {
-      "dateRangeStart":"2024-01-01"
+      "dateRangeStart":"2024-04-01"
     },
     "duration":55,
     "nonStandardHearingDurationReasons":[],
@@ -58,7 +58,7 @@
     "caseManagementLocationCode":"372653",
     "caseRef":"${CaseRef1}",
     "caserestrictedFlag":false,
-    "caseSLAStartDate":"2024-01-01"},
+    "caseSLAStartDate":"2024-04-01"},
   "partyDetails":
   [
     {
