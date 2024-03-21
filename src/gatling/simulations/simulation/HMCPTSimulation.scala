@@ -146,11 +146,11 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateAppealCase
     val CreateAppeal= scenario("CreateAppeal")
-     .repeat(2109){
+     .repeat(1700){
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
-         pause(5)
+         pause(2)
         )
       }
 
@@ -170,21 +170,21 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
 
 //    CIVIL HMC Request Hearing Peak/Stress Test
- /* setUp(
+  setUp(
     (RH.inject(rampUsers(1700).during(3300))),  //1700 3300
     (RUDH.inject(rampUsers(250).during(3200))), //250 3200
    (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
     .maxDuration(4000)
-*/
+
 
     //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
+  /*setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
     (RUDH.inject(rampUsers(250).during(3200))), //250 3200
   (CreateAppeal.inject(rampUsers(1).during(1)))) //1
      .protocols(httpProtocol)
      .maxDuration(4000)
-
+*/
 
 /*
      setUp(RHR.inject(rampUsers(1864).during(2400)))
@@ -192,11 +192,11 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       .maxDuration(30000)
 */
 
- /*   setUp(IACRHR.inject(rampUsers(50).during(300)))
+   /* setUp(IACRHR.inject(rampUsers(50).during(300)))
       .protocols(httpProtocol)
       .maxDuration(30000)
-*/
 
+*/
 
 //Soak test
 // RH 4400 / 14200
