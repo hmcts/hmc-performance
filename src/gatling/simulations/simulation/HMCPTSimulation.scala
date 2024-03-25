@@ -51,9 +51,9 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       exec(
       GetHearing.GetHearing,
       GetAllHearing.GetAllHearing,
-      RequestHearing.RequestHearing,
-      GetHearing.GetHearing,
-      GetAllHearing.GetAllHearing
+      RequestHearing.RequestHearing
+   //   GetHearing.GetHearing,
+   //   GetAllHearing.GetAllHearing
       )
        }
        )
@@ -73,11 +73,11 @@ import utils.{Environment, IDAMHelper, S2SHelper}
           //  IDAMHelper.getIdamToken,
          repeat(1){
          exec(
-         GetHearing.GetHearing,
-         GetAllHearing.GetAllHearing,
+       //  GetHearing.GetHearing,
+      //   GetAllHearing.GetAllHearing,
          UpdateHearing.UpdateHearing,
-         GetHearing.GetHearing,
-         GetAllHearing.GetAllHearing,
+      //   GetHearing.GetHearing,
+      //   GetAllHearing.GetAllHearing,
          pause(60),
          DeleteHearing.DeleteHearing,
          GetHearing.GetHearing,
@@ -176,15 +176,24 @@ import utils.{Environment, IDAMHelper, S2SHelper}
    (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
     .maxDuration(4000)
+   */
 
-*/
+    //    CIVIL HMC Request Hearing Stress Test
+  setUp(
+    (RH.inject(rampUsers(3400).during(3300))),  //1700 3300
+    (RUDH.inject(rampUsers(500).during(3200))), //250 3200
+   (CreateAppeal.inject(rampUsers(1).during(100))))//1
+     .protocols(httpProtocol)
+    .maxDuration(4000)
+
+
     //Request Hearing Smoke Tests
-  setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
+ /* setUp(RH.inject(rampUsers(1700).during(3400)),  //1700 3400
     (RUDH.inject(rampUsers(250).during(3200))), //250 3200
   (CreateAppeal.inject(rampUsers(1).during(1)))) //1
      .protocols(httpProtocol)
      .maxDuration(4000)
-
+*/
 
 /*
      setUp(RHR.inject(rampUsers(1577).during(2400)))
@@ -192,11 +201,12 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       .maxDuration(30000)
 */
 
-   /* setUp(IACRHR.inject(rampUsers(50).during(300)))
+    /*
+    setUp(IACRHR.inject(rampUsers(50).during(300)))
       .protocols(httpProtocol)
       .maxDuration(30000)
-
 */
+
 
 //Soak test
 // RH 4400 / 14200
