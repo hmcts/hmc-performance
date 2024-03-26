@@ -150,7 +150,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
      feed(NINumberFeeder)
      .exec(
          CreateAppealCase.CreateAppealCase,
-         pause(2)
+         pause(5)
         )
       }
 
@@ -180,8 +180,8 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //    CIVIL HMC Request Hearing Stress Test
   setUp(
-    (RH.inject(rampUsers(3400).during(3300))),  //1700 3300
-    (RUDH.inject(rampUsers(500).during(3200))), //250 3200
+    (RH.inject(rampUsers(5100).during(3300))),  //1700 3300
+    (RUDH.inject(rampUsers(750).during(3200))), //250 3200
    (CreateAppeal.inject(rampUsers(1).during(100))))//1
      .protocols(httpProtocol)
     .maxDuration(4000)
