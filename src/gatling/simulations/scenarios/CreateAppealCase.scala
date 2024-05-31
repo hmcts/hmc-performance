@@ -25,6 +25,7 @@ object CreateAppealCase {
       .check(header("Location").optional.saveAs("Location"))
       //.check(jsonPath("$..email").optional.saveAs("Email"))
       .check(bodyString.saveAs("BODY10")))
+      
     .exec {
       session =>
         println(session("BODY10").as[String])
