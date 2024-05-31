@@ -1,11 +1,11 @@
 results/*
 .DS_Store
-.idea/
+.idea/*
 target/**
 *.iml
 *.project
 .gradle/
-build/**
+build/*
 *.log
 *.zip
 bin/*
