@@ -30,6 +30,17 @@ object  S2SHelper {
     .pause(1)
 
 
+  def s2s(microservice: String) = {
+
+    exec(http("GetS2SToken")
+      .post(S2S_BASE_URI + "/lease")
+      .header("Content-Type", "application/json")
+      .body(StringBody(s"""{"microservice":"${microservice}"}"""))
+      .check(bodyString.saveAs(s"${microservice}BearerToken")))
+      .exitHereIfFailed
+  }
+
+
 
 
 

@@ -39,7 +39,7 @@
   "caseDetails":
   {
     "hmctsServiceCode":"BBA3",
-    "caseDeepLink":"https://manage-case.perftest.platform.hmcts.net/cases/case-details/${CaseRef1}",
+    "caseDeepLink":"https://manage-case.perftest.platform.hmcts.net/cases/case-details/${caseId}",
     "hmctsInternalCaseName":"Rhqdjpip Dbpyjpip",
     "publicCaseName":"Rhqdjpip Dbpyjpip",
     "caseAdditionalSecurityFlag":false,
@@ -56,7 +56,7 @@
       }
     ],
     "caseManagementLocationCode":"372653",
-    "caseRef":"${CaseRef1}",
+    "caseRef":"${caseId}",
     "caserestrictedFlag":false,
     "caseSLAStartDate":"2024-01-16"},
   "partyDetails":

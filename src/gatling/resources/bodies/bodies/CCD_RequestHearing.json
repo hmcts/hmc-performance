@@ -1,0 +1,55 @@
+{
+  "data": {
+     "hearings": [
+        {
+           "value": {
+              "hearingDate": "2024-06-04",
+              "time": "12:00",
+              "postponedDate": "2024-06-05",
+              "adjourned": "No",
+              "adjournedDate": "2024-06-05",
+              "hearingId": "123123",
+              "eventDate": "2024-06-04",
+              "venueId": "123456",
+              "hearingRequested": "2024-06-04T00:00:00.000",
+              "versionNumber": "1",
+              "hearingStatus": "AWAITING_LISTING",
+              "start": "2024-06-04T00:00:00.000",
+              "end": "2024-06-04T00:00:00.000",
+              "epimsId": "123",
+              "hearingChannel": "INTER",
+              "venue": {
+                 "name": "Cardiff Court",
+                 "googleMapLink": "12345",
+                 "address": {
+                    "line1": "Court 1",
+                    "line2": "Perf Test",
+                    "line3": "Perf",
+                    "town": "Perf Town",
+                    "county": "Perf",
+                    "postcode": "PR1 1RT",
+                    "country": "UK",
+                    "postcodeLookup": null,
+                    "postcodeAddress": null
+                 }
+              },
+              "panel": {
+                 "assignedTo": {
+                    "idamId": null,
+                    "personalCode": null
+                 },
+                 "panelMembers": []
+              }
+           },
+           "id": null
+        }
+     ]
+  },
+  "event": {
+     "id": "addHearing",
+     "summary": "",
+     "description": ""
+  },
+  "event_token": "#{eventToken}",
+  "ignore_warning": false
+}

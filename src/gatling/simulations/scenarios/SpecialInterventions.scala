@@ -4,7 +4,9 @@ package scenarios
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import utils.Environment
-import java.io.{BufferedWriter, FileWriter}
+import scala.util.Random
+import scala.concurrent.duration._
+
 
 object SpecialInterventions {
 
@@ -20,37 +22,89 @@ object SpecialInterventions {
 4. Request Hearing Response - check if payload is still valid, if not check with Gokul
 
 */
+  private val rng: Random = new Random()
+  private def NINumber(): String = rng.alphanumeric.filter(_.isDigit).take(8).mkString
+  private def firstName(): String = rng.alphanumeric.filter(_.isLetter).take(10).mkString
+  private def lastName(): String = rng.alphanumeric.filter(_.isLetter).take(10).mkString
 
   val CreateAppeal = 
 
-    exec(http(requestName="SI_010_CreateAppealCase")
+    exec(_.setAll(
+        ("NINumber", NINumber()),
+        ("firstname", firstName()),
+        ("lastname", lastName())
+    ))
+
+    .exec(http(requestName="SI_010_CreateAppealCase")
       .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")
-    
-      .body(ElFileBody("bodies/bodies/CreateAppealCase.json")).asJson
+      .body(ElFileBody("bodies/bodies/CreateValidAppeal.json")).asJson
       .check(status.is(201))
       .check(header("Location").optional.saveAs("Location"))
+      .check(headerRegex("Location", "appeals/([0-9]+)").saveAs("caseId"))
       // .check(bodyString.saveAs("BODY10"))
       )
 
+    // .exec(http("API_SSCS_GetEventToken")
+    //   .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/event-triggers/validAppealCreated/token")
+    //   .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+    //   .header("Authorization", "Bearer #{accessToken}")
+    //   .header("Content-Type","application/json")
+    //   .check(jsonPath("$.token").saveAs("eventToken")))
+
+    // .exec(http("API_SSCS_CreateCase")
+    //   .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases")
+    //   .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+    //   .header("Authorization", "Bearer #{accessToken}")
+    //   .header("Content-Type","application/json")
+    //   .body(ElFileBody("bodies/bodies/CreateValidAppeal.json"))
+    //   .check(jsonPath("$.id").saveAs("caseId")))
+
+    .pause(Environment.constantthinkTime.seconds)
+
+    .exec {
+      session =>
+        println(session("caseId").as[String])
+        session
+    }
     
   val SendToFTA =
 
-    //TBC
+    exec(http("SI_020_SendToFTA_GetToken")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/adminSendToWithDwp/token")
+      .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+      .header("Authorization", "Bearer #{accessToken}")
+      .header("Content-Type","application/json")
+      .check(jsonPath("$.token").saveAs("eventToken")))
+
+    .exec(http("SI_020_SendToFTA_CreateEvent")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+      .header("Authorization", "Bearer #{accessToken}")
+      .header("Content-Type","application/json")
+      .body(ElFileBody("bodies/bodies/SendToFTA.json")))
+
+    .pause(Environment.constantthinkTime.seconds)
 
   val RequestHearing = 
 
-    exec(http("SI_010_RequestHearing")
-      .post("http://hmc-cft-hearing-service-perftest.service.core-compute-perftest.internal/hearing/")
-      .headers(Environment.commonHeader)
-      .body(ElFileBody("bodies/bodies/RequestHearing.json")).asJson
-      .check(status.is(201))
-      .check (regex ("\"status\":").saveAs ("hearingstatus"))
-      .check(jsonPath("$..hearingRequestID").optional.saveAs("hearingRequestID"))
-      .check(jsonPath("$..status").optional.saveAs("status"))
-      .check(jsonPath("$..timeStamp").optional.saveAs("timeStamp"))
-      .check(jsonPath("$..versionNumber").optional.saveAs("versionNumber"))
-      // .check(bodyString.saveAs("BODY1"))
-      )
+   exec(http("SI_030_AddHearing_GetToken")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/addHearing/token")
+      .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+      .header("Authorization", "Bearer #{accessToken}")
+      .header("Content-Type","application/json")
+      .check(jsonPath("$.token").saveAs("eventToken")))
+
+    .exec(http("SI_030_AddHearing_CreateEvent")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+      .header("Authorization", "Bearer #{accessToken}")
+      .header("Content-Type","application/json")
+      .body(ElFileBody("bodies/bodies/CCD_RequestHearing.json")))
+
+    .pause(Environment.constantthinkTime.seconds)
+
+
+    //1717498801157254
 
   val RequestHearingResponse = 
 

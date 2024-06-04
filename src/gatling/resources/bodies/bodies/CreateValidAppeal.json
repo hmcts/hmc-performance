@@ -1,0 +1,70 @@
+{
+  "benefitType": {
+    "description": "PIP",
+    "code": "PIP"
+  },
+  "mrn": {
+    "dwpIssuingOffice": "DWP PIP (1)",
+    "date": "04-06-2024",
+    "reasonForBeingLate": "Lost my paperwork"
+  },
+  "isAppointee": false,
+  "evidenceProvide": "false",
+  "appellant": {
+    "title": "Mr",
+    "firstName": "#{firstname}",
+    "lastName": "#{lastname}",
+    "dob": "26-02-1990",
+    "nino": "AB#{NINumber}C",
+    "contactDetails": {
+      "addressLine1": "123 Hairy Lane",
+      "addressLine2": "Off Hairy Park",
+      "townCity": "Hairyfield",
+      "county": "Kent",
+      "postCode": "CF240AD",
+      "phoneNumber": "07411222222",
+      "emailAddress": "hmctspentet1@mailinator.com"
+    }
+  },
+  "smsNotify": {
+    "wantsSMSNotifications": true,
+    "smsNumber": "07411333333"
+  },
+  "hasRepresentative": true,
+  "representative": {
+    "title": "Mr",
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "organisation": "HP Ltd",
+    "contactDetails": {
+      "addressLine1": "123 Hairy Lane",
+      "addressLine2": "Off Hairy Park",
+      "townCity": "Town",
+      "county": "County",
+      "postCode": "CF240AD",
+      "phoneNumber": "07411999999",
+      "emailAddress": "hmctspentet2@mailinator.com"
+    }
+  },
+  "reasonsForAppealing": {
+    "reasons": [
+      {
+        "whatYouDisagreeWith": "aaaaaaaaaa",
+        "reasonForAppealing": "aaaaaaaaaa"
+      },
+      {
+        "whatYouDisagreeWith": "bbbbbbbbbb",
+        "reasonForAppealing": "bbbbbbbbbb"
+      },
+      {
+        "whatYouDisagreeWith": "cccccccccc",
+        "reasonForAppealing": "cccccccccc"
+      }
+    ],
+    "otherReasons": "Another reason"
+  },
+  "hearingType": "paper",
+  "signAndSubmit": {
+    "signer": "Joe Bloggs"
+  }
+}
