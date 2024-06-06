@@ -108,12 +108,27 @@ object SpecialInterventions {
 
   val RequestHearingResponse = 
 
-    exec(http("put_request_hearings_response")
-      .put("https://hmi-apim.perftest.platform.hmcts.net/hmi/hearings/${CivilHearingID}?")
-      .headers(Environment.inboundcommonHeader)
-      .body(ElFileBody("bodies/bodies/RequestHearingResponse.json")).asJson
-      .check(status.is(202))
-      )
+    exec(http("SI_040_UploadResponse_GetToken")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/dwpUploadResponse/token")
+      .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+      .header("Authorization", "Bearer #{accessToken}")
+      .header("Content-Type","application/json")
+      .check(jsonPath("$.token").saveAs("eventToken"))
+      .check(jsonPath("$.case_details.case_data.appeal.appellant.id").saveAs("appellantId"))
+      .check(jsonPath("$.case_details.case_data.appeal.appellant.appointee.id").saveAs("appointeeId"))
+      .check(jsonPath("$.case_details.case_data.appeal.appealReasons.reasons[0].id").saveAs("appealReason1"))
+      .check(jsonPath("$.case_details.case_data.appeal.appealReasons.reasons[1].id").saveAs("appealReason2"))
+      .check(jsonPath("$.case_details.case_data.appeal.appealReasons.reasons[2].id").saveAs("appealReason3"))
+      .check(jsonPath("$.case_details.case_data.appeal.rep.id").saveAs("repId")))
+
+    .exec(http("SI_030_AddHearing_CreateEvent")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
+      .header("Authorization", "Bearer #{accessToken}")
+      .header("Content-Type","application/json")
+      .body(ElFileBody("bodies/bodies/UploadResponse.json")))
+
+    .pause(Environment.constantthinkTime.seconds)
       
 
 

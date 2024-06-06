@@ -5,9 +5,10 @@ target/**
 *.iml
 *.project
 .gradle/
-build/*
+build/** 
 *.log
 *.zip
 bin/*
 .settings/*
 .vscode/*
+.gradle/**

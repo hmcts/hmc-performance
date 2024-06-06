@@ -1,0 +1,302 @@
+{
+  "data": {
+     "appeal": {
+        "mrnDetails": {
+           "dwpIssuingOffice": "DWP PIP (1)",
+           "mrnDate": "2024-06-04",
+           "mrnLateReason": "Lost my paperwork",
+           "mrnMissingReason": null
+        },
+        "appellant": {
+           "id": "#{appellantId}",
+           "identity": {
+              "dob": "1990-02-26",
+              "nino": "AB14185465C"
+           },
+           "name": {
+              "title": "Mr",
+              "firstName": "gOFusGXAfN",
+              "lastName": "ggBvBqdptw"
+           },
+           "address": {
+              "line1": "123 Hairy Lane",
+              "line2": "Off Hairy Park",
+              "town": "Hairyfield",
+              "county": "Kent",
+              "postcode": "CF240AD"
+           },
+           "contact": {
+              "email": "hmctspentet1@mailinator.com",
+              "phone": null,
+              "mobile": "07411222222"
+           },
+           "organisation": null,
+           "isAppointee": "No",
+           "appointee": {
+              "id": "#{appointeeId}",
+              "identity": {
+                 "dob": null,
+                 "nino": null
+              },
+              "name": {
+                 "title": null,
+                 "firstName": null,
+                 "lastName": null
+              },
+              "address": {},
+              "contact": {
+                 "email": null,
+                 "phone": null,
+                 "mobile": null
+              },
+              "organisation": null
+           },
+           "role": {},
+           "confidentialityRequired": null,
+           "isAddressSameAsAppointee": null
+        },
+        "benefitType": {
+           "code": "PIP",
+           "description": "PIP"
+        },
+        "hearingOptions": {
+           "languages": null
+        },
+        "appealReasons": {
+           "reasons": [
+              {
+                 "value": {
+                    "reason": "aaaaaaaaaa",
+                    "description": "aaaaaaaaaa"
+                 },
+                 "id": "#{appealReason1}"
+              },
+              {
+                 "value": {
+                    "reason": "bbbbbbbbbb",
+                    "description": "bbbbbbbbbb"
+                 },
+                 "id": "#{appealReason2}"
+              },
+              {
+                 "value": {
+                    "reason": "cccccccccc",
+                    "description": "cccccccccc"
+                 },
+                 "id": "#{appealReason3}"
+              }
+           ],
+           "otherReasons": "Another reason"
+        },
+        "rep": {
+           "id": "#{repId}",
+           "identity": {
+              "dob": null,
+              "nino": null
+           },
+           "name": {
+              "title": "Mr",
+              "firstName": "Harry",
+              "lastName": "Potter"
+           },
+           "address": {
+              "line1": "123 Hairy Lane",
+              "line2": "Off Hairy Park",
+              "town": "Town",
+              "county": "County",
+              "postcode": "CF240AD"
+           },
+           "contact": {
+              "email": "hmctspentet2@mailinator.com",
+              "phone": null,
+              "mobile": "07411999999"
+           },
+           "organisation": "HP Ltd",
+           "hasRepresentative": "Yes"
+        },
+        "signer": "Joe Bloggs",
+        "hearingType": null,
+        "hearingSubtype": {},
+        "receivedVia": "Online"
+     },
+     "dwpResponseDocument": {
+        "documentFileName": null,
+        "documentLink": {
+           "document_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/aa5e7762-be01-47d3-95a9-1ab7701cfac2",
+           "document_binary_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/aa5e7762-be01-47d3-95a9-1ab7701cfac2/binary",
+           "document_filename": "EXUI 1.1 Support Runbook.pdf"
+        }
+     },
+     "dwpAT38Document": {
+        "documentFileName": null,
+        "documentLink": {
+           "document_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/ccf4fa7a-4c56-4e6f-a62e-6ecab21791d0",
+           "document_binary_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/ccf4fa7a-4c56-4e6f-a62e-6ecab21791d0/binary",
+           "document_filename": "EXUI 1.1 Support Runbook.pdf"
+        }
+     },
+     "dwpEvidenceBundleDocument": {
+        "documentFileName": null,
+        "documentLink": {
+           "document_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/df894ea1-5aad-4bf4-9f97-c9b9d210955a",
+           "document_binary_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/df894ea1-5aad-4bf4-9f97-c9b9d210955a/binary",
+           "document_filename": "EXUI 1.1 Support Runbook.pdf"
+        }
+     },
+     "dwpEditedEvidenceReason": null,
+     "dwpUploadAudioVideoEvidence": [],
+     "benefitCode": "002",
+     "issueCode": "CC",
+     "dwpFurtherInfo": "No",
+     "dwpUCB": null,
+     "dwpFurtherEvidenceStates": null,
+     "dynamicDwpState": {
+        "value": {
+           "code": "UnRegistered",
+           "label": "Appeal to-be registered"
+        },
+        "list_items": [
+           {
+              "code": "adjournmentNoticeIssued",
+              "label": "Adjournment notice issued"
+           },
+           {
+              "code": "appealAbated",
+              "label": "Appeal abated"
+           },
+           {
+              "code": "appointeeDetailsNeeded",
+              "label": "Appointee details needed"
+           },
+           {
+              "code": "decisionActioned",
+              "label": "Decision actioned"
+           },
+           {
+              "code": "directionActionRequired",
+              "label": "Direction - action req'd"
+           },
+           {
+              "code": "directionResponded",
+              "label": "Direction - responded"
+           },
+           {
+              "code": "Exception",
+              "label": "Exception"
+           },
+           {
+              "code": "extensionRequested",
+              "label": "Extension requested"
+           },
+           {
+              "code": "feActionedNA",
+              "label": "FE Actioned - NA"
+           },
+           {
+              "code": "feActionedNR",
+              "label": "FE Actioned - NR"
+           },
+           {
+              "code": "feReceived",
+              "label": "FE received"
+           },
+           {
+              "code": "finalDecisionIssued",
+              "label": "Final decision issued"
+           },
+           {
+              "code": "hearingDateIssued",
+              "label": "Hearing date issued"
+           },
+           {
+              "code": "hearingPostponed",
+              "label": "Postponed"
+           },
+           {
+              "code": "hearingRecordingActioned",
+              "label": "Hearing recording actioned"
+           },
+           {
+              "code": "hearingRecordingProcessed",
+              "label": "Hearing recording processed"
+           },
+           {
+              "code": "inProgress",
+              "label": "In progress"
+           },
+           {
+              "code": "lapsed",
+              "label": "Lapsed"
+           },
+           {
+              "code": "noAction",
+              "label": "No action"
+           },
+           {
+              "code": "phmeGranted",
+              "label": "PHE granted"
+           },
+           {
+              "code": "phmeRefused",
+              "label": "PHE refused"
+           },
+           {
+              "code": "Registered",
+              "label": "Appeal registered (FTA)"
+           },
+           {
+              "code": "reinstatementGranted",
+              "label": "Reinstatement Granted"
+           },
+           {
+              "code": "reinstatementRefused",
+              "label": "Reinstatement Refused"
+           },
+           {
+              "code": "repAdded",
+              "label": "Rep added"
+           },
+           {
+              "code": "responseSubmittedDwp",
+              "label": "Response submitted (FTA)"
+           },
+           {
+              "code": "strikeOutActioned",
+              "label": "Strike-out actioned"
+           },
+           {
+              "code": "struckOut",
+              "label": "Struck out"
+           },
+           {
+              "code": "supplementaryResponse",
+              "label": "Supplementary response"
+           },
+           {
+              "code": "UnRegistered",
+              "label": "Appeal to-be registered"
+           },
+           {
+              "code": "validityChallenge",
+              "label": "Validity challenge"
+           },
+           {
+              "code": "withdrawalReceived",
+              "label": "Withdrawal received"
+           },
+           {
+              "code": "Withdrawn",
+              "label": "Withdrawn"
+           }
+        ]
+     },
+     "dwpIsOfficerAttending": "No"
+  },
+  "event": {
+     "id": "dwpUploadResponse",
+     "summary": "",
+     "description": ""
+  },
+  "event_token": "#{eventToken}",
+  "ignore_warning": false
+}
