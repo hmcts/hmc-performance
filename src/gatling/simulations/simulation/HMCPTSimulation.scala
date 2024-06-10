@@ -32,7 +32,7 @@ class HMCPTSimulation extends Simulation {
 	/* ******************************** */
 
   /* PERFORMANCE TEST CONFIGURATION */
-	val specialInterventionsTarget:Double = 1 //95
+	val specialInterventionsTarget:Double = 95 //95
 
 	val rampUpDurationMins = 5
 	val rampDownDurationMins = 5
