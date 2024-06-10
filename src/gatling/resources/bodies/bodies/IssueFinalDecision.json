@@ -1,0 +1,16 @@
+{
+  "data": {
+     "writeFinalDecisionPreviewDocument": {
+        "document_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/d2e430df-89ab-47eb-83e3-49cac47ea553",
+        "document_binary_url": "http://dm-store-perftest.service.core-compute-perftest.internal/documents/d2e430df-89ab-47eb-83e3-49cac47ea553/binary",
+        "document_filename": "EXUI 1.1 Support Runbook.pdf"
+     }
+  },
+  "event": {
+     "id": "issueFinalDecision",
+     "summary": "",
+     "description": ""
+  },
+  "event_token": "#{eventToken}",
+  "ignore_warning": false
+}
