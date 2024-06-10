@@ -9,8 +9,7 @@ object Environment {
 
  val HttpProtocol = http
 
- val environment: String = System.getProperty("env")
- val idamURL = "https://idam-web-public.#{env}.platform.hmcts.net"
+ val idamURL = "https://idam-api.#{env}.platform.hmcts.net"
  val baseURL = "http://hmc-cft-hearing-service-#{env}.service.core-compute-#{env}.internal"
  val ccdDataStoreUrl = "http://ccd-data-store-api-#{env}.service.core-compute-#{env}.internal"
  val IDAM_API_BASE_URI = "https://idam-api.#{env}.platform.hmcts.net"
@@ -18,7 +17,7 @@ object Environment {
  val S2S_BASE_URI = "http://rpe-service-auth-provider-#{env}.service.core-compute-#{env}.internal/testing-support"
  val S2S_SERVICE_NAME = "hmc_hmi_inbound_adapter"
  val S2S_SERVICE_NAME2 = "api_gw"
- val IDAM_OAUTH_SECRET = "{123456}" //to be obtained from vault
+ val IDAM_OAUTH_SECRET = "" //to be obtained from vault
  val FUNCTIONAL_TEST_CLIENT_S2S_TOKEN = ""
 
  val minThinkTime = 2

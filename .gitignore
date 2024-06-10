@@ -12,3 +12,4 @@ bin/*
 .settings/*
 .vscode/*
 .gradle/*
+# /src/gatling/resources/application.conf

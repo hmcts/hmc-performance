@@ -35,7 +35,7 @@ object SpecialInterventions {
     //     session
     // }
 
-    .pause(600)
+    .pause(600.seconds)
 
   val RequestHearing = 
 

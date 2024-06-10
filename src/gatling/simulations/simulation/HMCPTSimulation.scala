@@ -48,17 +48,18 @@ class HMCPTSimulation extends Simulation {
 	val pauseOption:PauseType = debugMode match{
 		case "off" if testType == "perftest" => constantPauses
 		case "off" if testType == "pipeline" => customPauses(pipelinePausesMillis)
-		case _ => disabledPauses
+		case _ => constantPauses //disabledPauses
 	}
 
   val httpProtocol = Environment.HttpProtocol
     .baseUrl(Environment.baseURL.replace("#{env}", s"${env}"))
+    .doNotTrackHeader("1")
 
   val SpecialInterventionSimulation = scenario("Special Interventions")
     .exitBlockOnFail {
       exec(_.set("env", s"${env}"))
       .exec(S2SHelper.s2s("ccd_data"))
-      .exec(IDAMHelper.GetIdamToken)
+      .exec(IDAMHelper.GetIdamTokenSI)
       .exec(SpecialInterventions.CreateAppeal)
       .exec(SpecialInterventions.RequestHearingResponse)
       .exec(SpecialInterventions.RequestHearing)
