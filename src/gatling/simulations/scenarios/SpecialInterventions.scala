@@ -40,14 +40,14 @@ object SpecialInterventions {
   val RequestHearing = 
 
     exec(http("SI_030_AddHearing_GetToken")
-      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/addHearing/token")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/addHearing/token")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
       .check(jsonPath("$.token").saveAs("eventToken")))
 
     .exec(http("SI_030_AddHearing_CreateEvent")
-      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
@@ -58,14 +58,14 @@ object SpecialInterventions {
   val HearingBooked =
 
     exec(http("SI_040_HearingBooked_GetToken")
-      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/hearingBooked/token")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/hearingBooked/token")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
       .check(jsonPath("$.token").saveAs("eventToken")))
 
     .exec(http("SI_040_HearingBooked_CreateEvent")
-      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
@@ -76,7 +76,7 @@ object SpecialInterventions {
   val RequestHearingResponse = 
 
     exec(http("SI_020_UploadResponse_GetToken")
-      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/dwpUploadResponse/token")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/dwpUploadResponse/token")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
@@ -89,7 +89,7 @@ object SpecialInterventions {
       .check(jsonPath("$.case_details.case_data.appeal.rep.id").saveAs("repId")))
 
     .exec(http("SI_020_AddHearing_CreateEvent")
-      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
@@ -100,14 +100,14 @@ object SpecialInterventions {
   val WriteFinalDecision =
 
     exec(http("SI_050_WriteFinalDecision_GetToken")
-      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/writeFinalDecision/token")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/writeFinalDecision/token")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
       .check(jsonPath("$.token").saveAs("eventToken")))
 
     .exec(http("SI_050_WriteFinalDecision_CreateEvent")
-      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
@@ -118,18 +118,24 @@ object SpecialInterventions {
   val IssueFinalDecision =
 
     exec(http("SI_060_IssueFinalDecision_GetToken")
-      .get(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/issueFinalDecision/token")
+      .get(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/event-triggers/issueFinalDecision/token")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
       .check(jsonPath("$.token").saveAs("eventToken")))
 
     .exec(http("SI_060_IssueFinalDecision_CreateEvent")
-      .post(Environment.ccdDataStoreUrl + "/caseworkers/546965/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
+      .post(Environment.ccdDataStoreUrl + "/caseworkers/a91aa146-2396-490d-9a27-6c2a3031f994/jurisdictions/SSCS/case-types/Benefit/cases/#{caseId}/events")
       .header("ServiceAuthorization", "Bearer #{ccd_dataBearerToken}")
       .header("Authorization", "Bearer #{accessToken}")
       .header("Content-Type","application/json")
       .body(ElFileBody("bodies/bodies/IssueFinalDecision.json")))
+
+    .exec {
+      session =>
+        println(session("caseId").as[String])
+        session
+    }
 
       
 

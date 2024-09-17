@@ -25,7 +25,7 @@ object  IDAMHelper {
   val GetIdamTokenSI =
 
     exec(http("GetIdamToken")
-      .post(Environment.idamURL + "/o/token?client_id=ccd_gateway&client_secret=" + ccdGatewayClientSecret + "&grant_type=password&scope=" + ccdScope + "&username=ccdloadtest401@gmail.com&password=Password12")
+      .post(Environment.idamURL + "/o/token?client_id=ccd_gateway&client_secret=" + ccdGatewayClientSecret + "&grant_type=password&scope=" + ccdScope + "&username=SSCS-perftest-superuser@justice.gov.uk&password=Testing123")
       .header("Content-Type", "application/x-www-form-urlencoded")
       .header("Content-Length", "0")
       .check(status.is(200))
