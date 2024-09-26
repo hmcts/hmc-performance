@@ -131,11 +131,11 @@ object SpecialInterventions {
       .header("Content-Type","application/json")
       .body(ElFileBody("bodies/bodies/IssueFinalDecision.json")))
 
-    .exec {
-      session =>
-        println(session("caseId").as[String])
-        session
-    }
+    // .exec {
+    //   session =>
+    //     println(session("caseId").as[String])
+    //     session
+    // }
 
       
 
