@@ -16,7 +16,7 @@ object IACRequestHearingResponse {
 
   val IACRequestHearingResponse = group("060_post_request_hearings_response") {
     exec(http("put_request_hearings_response")
-      .put("https://hmi-apim.demo.platform.hmcts.net/hmi/hearings/${IACHearingID}?")
+      .put("https://hmi-apim.demo.platform.hmcts.net/hmi/hearings/#{IACHearingID}?")
       .headers(Environment.inboundcommonHeader)
       .body(ElFileBody("bodies/bodies/IACRequestHearingResponse.json")).asJson
       .check(status.is(202))

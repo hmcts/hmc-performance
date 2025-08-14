@@ -20,7 +20,7 @@ object GetHearing {
 
   val GetHearing = group("040_GetHearing") {
       exec(http(requestName = "get_hearing")
-        .get("/hearing/${hearingref2}")
+        .get("/hearing/#{hearingref2}")
         .headers(Environment.commonHeader)
         .check(status.is(200))
         .check(bodyString.saveAs("BODY4")))

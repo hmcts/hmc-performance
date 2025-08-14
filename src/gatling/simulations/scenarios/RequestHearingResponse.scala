@@ -18,7 +18,7 @@ object RequestHearingResponse {
 
   val RequestHearingResponse = group("060_post_request_hearings_response") {
     exec(http("put_request_hearings_response")
-      .put("https://hmi-apim.demo.platform.hmcts.net/hmi/hearings/${CivilHearingID}?")
+      .put("https://hmi-apim.demo.platform.hmcts.net/hmi/hearings/#{CivilHearingID}?")
       .headers(Environment.inboundcommonHeader)
       .body(ElFileBody("bodies/bodies/RequestHearingResponse.json")).asJson
       .check(status.is(202))

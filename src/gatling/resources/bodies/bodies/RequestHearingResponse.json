@@ -5,7 +5,7 @@
       "timestamp": "2024-03-07T16:11:00Z"
     },
     "hearing": {
-      "hearingCaseIdHMCTS": "${CivilCaseID}",
+      "hearingCaseIdHMCTS": "#{CivilCaseID}",
       "hearingCaseVersionId": "1",
       "hearingCaseStatus": {
         "code": "100",
@@ -15,7 +15,7 @@
         "code": "AA",
         "description": "Civil"
       },
-      "listingRequestId": "${CivilHearingID}",
+      "listingRequestId": "#{CivilHearingID}",
       "hearingCreatedDate": "2024-03-07T16:10:47Z",
       "hearingCreatedBy": "nazee.kadiu1@hmcts.net",
       "hearingIdCaseHQ": "447639783",

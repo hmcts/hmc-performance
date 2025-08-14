@@ -16,7 +16,7 @@ object  S2SHelperInbound {
     .header("Content-Type", "application/json")
     .body(StringBody(
      s"""{
-       "microservice": "${S2S_SERVICE_NAME2}"
+       "microservice": "#{S2S_SERVICE_NAME2}"
         }"""
     )).asJson
     .check(bodyString.saveAs("s2sToken2"))

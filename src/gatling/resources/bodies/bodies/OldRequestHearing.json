@@ -47,7 +47,7 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "${CaseRef1}",
+    "caseRef": "#{CaseRef1}",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",
