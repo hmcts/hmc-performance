@@ -38,7 +38,11 @@ withNightlyPipeline("java", product, component) {
     env.IDAM_URL = 'https://idam-web-public.aat.platform.hmcts.net/login'
 
 
-    enablePerformanceTest()
+    enablePerformanceTest(
+        afterAlways('checkout') {
+            sh """ git submodule update --init --recursive"""
+        }
+    )
 
     after('performanceTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'

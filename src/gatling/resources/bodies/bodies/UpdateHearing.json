@@ -1,6 +1,6 @@
 {
   "requestDetails" : {
-    "versionNumber" : "#{versionnumber}"
+    "versionNumber" : "1"
   },
   "hearingDetails": {
     "amendReasonCodes" : ["amend"],
@@ -48,7 +48,7 @@
   },
   "caseDetails": {
     "hmctsServiceCode": "BBA3",
-    "caseRef": "#{caseref2}",
+    "caseRef": "#{CaseRef1}",
     "requestTimeStamp": "2000-08-10T12:20:00.000Z",
     "externalCaseReference": "EXT/REF123",
     "caseDeepLink": "https://www.google.com",

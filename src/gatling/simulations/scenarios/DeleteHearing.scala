@@ -19,16 +19,16 @@ object DeleteHearing {
 
   val DeleteHearing = group("030_DeleteHearing") {
       exec(http(requestName = "delete_request_hearings")
-        .delete("/hearing/#{hearingref3}")
+        .delete("/hearing/#{hearingRequestID}")
         .headers(Environment.commonHeader)
         .body(ElFileBody("bodies/bodies/DeleteHearing.json")).asJson
-        .check(status.is(200))
-        .check(bodyString.saveAs("BODY3")))
-        .exec {
-          session =>
-            println(session("BODY3").as[String])
-            session
-        }
-    .pause(MinThinkTime , MaxThinkTime)
+        .check(status.is(200)))
+//        .check(bodyString.saveAs("BODY3")))
+//        .exec {
+//          session =>
+//            println(session("BODY3").as[String])
+//            session
+//        }
+    .pause(MinThinkTime, MaxThinkTime)
     }
 }

@@ -17,23 +17,23 @@ object CreateAppealCase {
 
   val CreateAppealCase = group("901_CreateAppeal_Post") {
     exec(http(requestName="CreateAppealCase")
-      .post("http://sscs-tribunals-api-perftest.service.core-compute-perftest.internal/appeals")
-     //.post("http://sscs-tribunals-api-aat.service.core-compute-aat.internal/appeals")
-     // .headers(Environment.basicHeader)
+      .post("http://sscs-tribunals-api-#{env}.service.core-compute-#{env}.internal/appeals")
+      .headers(Environment.basicHeader)
       .body(ElFileBody("bodies/bodies/CreateAppealCase.json")).asJson
-      .check(status.is(201))
-      .check(header("Location").optional.saveAs("Location"))
+//      .check(status.is(201))
+//      .check(header("Location").saveAs("Location"))
+      .check(headerRegex("Location", "appeals/(.*?)$").saveAs("CaseRef1")))
       //.check(jsonPath("$..email").optional.saveAs("Email"))
-      .check(bodyString.saveAs("BODY10")))
-    .exec {
-      session =>
-        println(session("BODY10").as[String])
-        session
-    }
+//      .check(bodyString.saveAs("BODY10")))
+//    .exec {
+//      session =>
+//        println(session("BODY10").as[String])
+//        session
+//    }
         .exec { session =>
           val fw = new BufferedWriter(new FileWriter("HMCAppeals3.csv", true))
           try {
-           fw.write(session("Location").as[String] + "\r\n")
+           fw.write(session("CaseRef1").as[String] + "\r\n")
           } finally fw.close()
           session
         }

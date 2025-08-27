@@ -20,15 +20,15 @@ object GetHearing {
 
   val GetHearing = group("040_GetHearing") {
       exec(http(requestName = "get_hearing")
-        .get("/hearing/#{hearingref2}")
+        .get("/hearing/#{hearingRequestID}")
         .headers(Environment.commonHeader)
-        .check(status.is(200))
-        .check(bodyString.saveAs("BODY4")))
-        .exec {
-          session =>
-            println(session("BODY4").as[String])
-            session
-        }
-    .pause(MinThinkTime , MaxThinkTime)
+        .check(status.is(200)))
+//        .check(bodyString.saveAs("BODY4")))
+//        .exec {
+//          session =>
+//            println(session("BODY4").as[String])
+//            session
+//        }
+    .pause(MinThinkTime, MaxThinkTime)
     }
 }

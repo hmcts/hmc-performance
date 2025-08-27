@@ -18,15 +18,15 @@ object GetAllHearing {
 
   val GetAllHearing = group("050_GetAllHearings") {
       exec(http(requestName = "get_all_hearing")
-        .get("/hearings/#{caseref2}?")
+        .get("/hearings/#{CaseRef1}?")
         .headers(Environment.commonHeader)
-        .check(status.is(200))
-        .check(bodyString.saveAs("BODY5")))
-        .exec {
-          session =>
-            println(session("BODY5").as[String])
-            session
-        }
-    .pause(MinThinkTime , MaxThinkTime)
+        .check(status.is(200)))
+//        .check(bodyString.saveAs("BODY5")))
+//        .exec {
+//          session =>
+//            println(session("BODY5").as[String])
+//            session
+//        }
+    .pause(MinThinkTime, MaxThinkTime)
     }
 }

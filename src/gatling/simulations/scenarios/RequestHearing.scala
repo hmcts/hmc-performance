@@ -21,31 +21,31 @@ object RequestHearing {
 
   val RequestHearing = group("010_post_request_hearings") {
     exec(http("post_request_hearings")
-      .post("/hearing/")
+      .post("/hearing")
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/bodies/RequestHearing.json")).asJson
       .check(status.is(201))
-      .check (regex ("\"status\":").saveAs ("hearingstatus"))
+      .check(regex("\"status\":").saveAs("hearingstatus"))
       .check(jsonPath("$..hearingRequestID").optional.saveAs("hearingRequestID"))
       .check(jsonPath("$..status").optional.saveAs("status"))
       .check(jsonPath("$..timeStamp").optional.saveAs("timeStamp"))
-      .check(jsonPath("$..versionNumber").optional.saveAs("versionNumber"))
-      .check(bodyString.saveAs("BODY1")))
+      .check(jsonPath("$..versionNumber").optional.saveAs("versionNumber")))
+//      .check(bodyString.saveAs("BODY1")))
       }
     .group("011_Writeoutput") {
-    exec {
-      session =>
-        println(session("BODY1").as[String])
-        session
-    }
-    .exec { session =>
+//    exec {
+//      session =>
+//        println(session("BODY1").as[String])
+//        session
+//    }
+    exec { session =>
       val fw = new BufferedWriter(new FileWriter("HearingDetails.csv", true))
       try {
         fw.write(session("CaseRef1").as[String] + "," + session("hearingRequestID").as[String] + "," + session("status").as[String] + "," + session("timeStamp").as[String]+ "," + session("versionNumber").as[String] + "\r\n")
       } finally fw.close()
       session
     }
-    .pause(MinThinkTime , MaxThinkTime)
+    .pause(MinThinkTime, MaxThinkTime)
 
   }
 }

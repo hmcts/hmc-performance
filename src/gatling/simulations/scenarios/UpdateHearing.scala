@@ -18,16 +18,16 @@ object UpdateHearing {
 
   val UpdateHearing = group("020_update_request_hearings") {
     exec(http(requestName="put_update_hearings")
-      .put("/hearing/#{hearingref2}")
+      .put("/hearing/#{hearingRequestID}")
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/bodies/UpdateHearing.json")).asJson
-      .check(status.is(201))
-      .check(bodyString.saveAs("BODY2")))
-    .exec{
-      session =>
-        println(session("BODY2").as[String])
-        session
-    }
-    .pause(MinThinkTime , MaxThinkTime)
+      .check(status.is(201)))
+//      .check(bodyString.saveAs("BODY2")))
+//    .exec{
+//      session =>
+//        println(session("BODY2").as[String])
+//        session
+//    }
+    .pause(MinThinkTime, MaxThinkTime)
     }
 }

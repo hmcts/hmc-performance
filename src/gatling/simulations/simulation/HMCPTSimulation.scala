@@ -1,13 +1,13 @@
 package simulation
 
+import ccd.CcdHelper
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import scenarios.{DeleteHearing, GetAllHearing, GetHearing, RequestHearing, UpdateHearing, RequestHearingResponse,CreateHMCUser,UserAssignment,CreateAppealCase,IACRequestHearingResponse}
+import scenarios.{CreateAppealCase, CreateHMCUser, DeleteHearing, GetAllHearing, GetHearing, IACRequestHearingResponse, RequestHearing, RequestHearingResponse, UpdateHearing, UserAssignment}
 import utils.{Environment, IDAMHelper, S2SHelper}
 
 
-
-  class HMCPTSimulation extends Simulation
+class HMCPTSimulation extends Simulation
   {
 
 	/*===============================================================================================
@@ -70,7 +70,7 @@ import utils.{Environment, IDAMHelper, S2SHelper}
     //  {
         .exec(
           S2SHelper.S2SAuthToken,
-          //  IDAMHelper.getIdamToken,
+//            IDAMHelper.getIdamToken,
          repeat(1){
          exec(
        //  GetHearing.GetHearing,
@@ -127,12 +127,12 @@ import utils.{Environment, IDAMHelper, S2SHelper}
 
     //CreateUser
     val CreateUser = scenario("CreateUser")
-     .repeat(100){
-     feed(HMCUsersFeeder)
-     .exec(
-         CreateHMCUser.CreateHMCUser
-        )
-      }
+      .exec(_.set("env", "perftest"))
+      .exec(CcdHelper.authenticate("SSCS-perftest-superuser@justice.gov.uk", "Testing123", Environment.AM_SERVICE_NAME))
+      .feed(HMCUsersFeeder)
+      .exec(CreateHMCUser.CreateHMCUser)
+      .pause(Environment.maxThinkTime)
+      .exec(UserAssignment.UserAssignment)
 
     //CreateUser
     val UserAssignments = scenario("CreateUser")
@@ -154,13 +154,35 @@ import utils.{Environment, IDAMHelper, S2SHelper}
         )
       }
 
+    val e2e = scenario("End to End")
+      .exec(_.set("env", "perftest"))
+      .feed(NINumberFeeder)
+      .feed(HMCUsersFeeder)
+
+//      .exec(_.set("IDAMID", "a91aa146-2396-490d-9a27-6c2a3031f994"))
+      .exec(CcdHelper.authenticate("#{Username}", "#{Password}", Environment.S2S_SERVICE_NAME))
+      .pause(Environment.minThinkTime, Environment.maxThinkTime)
+
+      .exec(CreateAppealCase.CreateAppealCase)
+      .pause(Environment.minThinkTime, Environment.maxThinkTime)
+
+      .exec(RequestHearing.RequestHearing)
+      .exec(GetHearing.GetHearing)
+      .exec(GetAllHearing.GetAllHearing)
+      .exec(GetHearing.GetHearing)
+      .exec(GetAllHearing.GetAllHearing)
+      .randomSwitch(50.0 -> exitHere)
+      .exec(UpdateHearing.UpdateHearing)
+      .randomSwitch(50.0 -> exitHere)
+      .exec(DeleteHearing.DeleteHearing)
+
 
 
     //Smoke Tests
- /* setUp(CreateAppeal.inject(rampUsers(1).during(1)))
-     .protocols(httpProtocol)
-   .maxDuration(30000)
-*/
+//  setUp(CreateAppeal.inject(rampUsers(1).during(1)))
+//     .protocols(httpProtocol)
+//   .maxDuration(30000)
+
     //Request Hearing Smoke Tests
 //  setUp(RH.inject(rampUsers(400).during(800)))
   //(RUDH.inject(rampUsers(1).during(1))))
@@ -179,12 +201,12 @@ import utils.{Environment, IDAMHelper, S2SHelper}
    */
 
     //    CIVIL HMC Request Hearing Stress Test
-  setUp(
-    (RH.inject(rampUsers(6800).during(3300))),  //1700 3300
-    (RUDH.inject(rampUsers(1000).during(3200))), //250 3200
-   (CreateAppeal.inject(rampUsers(1).during(100))))//1
-     .protocols(httpProtocol)
-    .maxDuration(4000)
+//  setUp(
+//    (RH.inject(rampUsers(6800).during(3300))),  //1700 3300
+//    (RUDH.inject(rampUsers(1000).during(3200))), //250 3200
+//   (CreateAppeal.inject(rampUsers(1).during(100))))//1
+//     .protocols(httpProtocol)
+//    .maxDuration(4000)
 
 
     //Request Hearing Smoke Tests
@@ -206,6 +228,11 @@ import utils.{Environment, IDAMHelper, S2SHelper}
       .protocols(httpProtocol)
       .maxDuration(30000)
 */
+
+    setUp(e2e.inject(rampUsers(2800).during(3500))
+      .protocols(httpProtocol))
+
+//    setUp(CreateUser.inject(rampUsers(97).during(300)).protocols(httpProtocol))
 
 
 //Soak test
