@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bd1711a-040b-4a10-bcde-b5bbf251bcf7" name="Default Changelist" comment="HMC Hearing Response">
+    <list default="true" id="0bd1711a-040b-4a10-bcde-b5bbf251bcf7" name="Default Changelist" comment="Major overhaul: changed code to work sequentially e2e, commented out console outputs, added common-performance submodule and abstracted authentication using its code, created new hearing-managing users.">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gatling/resources/bodies/bodies/CreateAppealCase.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/gatling/resources/bodies/bodies/CreateAppealCase.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gatling/resources/bodies/bodies/DeleteHearing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/gatling/resources/bodies/bodies/DeleteHearing.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gatling/resources/bodies/bodies/UpdateHearing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/gatling/resources/bodies/bodies/UpdateHearing.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gatling/simulations/simulation/HMCPTSimulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/gatling/simulations/simulation/HMCPTSimulation.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HMCAppeals3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HMCAppeals3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HearingDetails.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HearingDetails.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileGatlingScala.analysis" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileGatlingScala.analysis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gatling/simulations/utils/IDAMHelper.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/gatling/simulations/utils/IDAMHelper.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +73,34 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pkryonas&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hmcts/hmc-performance.git&quot;,
+    &quot;accountId&quot;: &quot;29647628-1ef7-404a-b6a7-cf5bc3378851&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="28KQvmaSnfIgLrFCmCGLszzeQbq" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -85,7 +111,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;/Users/deepakgarcha/Documents/Performance Testing/HMCTS/hmc-performance&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Java__Upgrade&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/pariskryonas/IdeaProjects/hmc-performance&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.21525885&quot;
@@ -93,11 +124,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/gatling/conf" />
       <recent name="$PROJECT_DIR$/src/gatling/resources/bodies/bodies" />
       <recent name="$PROJECT_DIR$/src/gatling/simulations/utils" />
       <recent name="$PROJECT_DIR$/src/gatling/simulations/scenarios" />
-      <recent name="C:\Performance Testing\Reform\HCM\src\gatling\resources\bodies\bodies" />
-      <recent name="C:\Performance Testing\Reform\HCM\src\gatling\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="scenarios" />
@@ -124,6 +155,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="HCM [gatlingRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -145,6 +177,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -186,7 +219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1656419373667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated Gatling version from 3.9.5 to 3.14.3">
+      <option name="closed" value="true" />
+      <created>1755186885406</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755186885406</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Major overhaul: changed code to work sequentially e2e, commented out console outputs, added common-performance submodule and abstracted authentication using its code, created new hearing-managing users.">
+      <option name="closed" value="true" />
+      <created>1756299745523</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756299745523</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,6 +251,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HMC Hearing Response" />
-    <option name="LAST_COMMIT_MESSAGE" value="HMC Hearing Response" />
+    <MESSAGE value="Updated Gatling version from 3.9.5 to 3.14.3" />
+    <MESSAGE value="Major overhaul: changed code to work sequentially e2e, commented out console outputs, added common-performance submodule and abstracted authentication using its code, created new hearing-managing users." />
+    <option name="LAST_COMMIT_MESSAGE" value="Major overhaul: changed code to work sequentially e2e, commented out console outputs, added common-performance submodule and abstracted authentication using its code, created new hearing-managing users." />
   </component>
 </project>
