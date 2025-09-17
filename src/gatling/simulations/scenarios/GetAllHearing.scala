@@ -20,13 +20,14 @@ object GetAllHearing {
       exec(http(requestName = "get_all_hearing")
         .get("/hearings/#{CaseRef1}?")
         .headers(Environment.commonHeader)
-        .check(status.is(200)))
+        .check(substring("lastResponseReceivedDateTime")))
+//        .check(status.is(200))
 //        .check(bodyString.saveAs("BODY5")))
 //        .exec {
 //          session =>
 //            println(session("BODY5").as[String])
 //            session
 //        }
-    .pause(MinThinkTime, MaxThinkTime)
     }
+    .pause(MinThinkTime, MaxThinkTime)
 }

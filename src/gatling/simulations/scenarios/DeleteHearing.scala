@@ -22,6 +22,7 @@ object DeleteHearing {
         .delete("/hearing/#{hearingRequestID}")
         .headers(Environment.commonHeader)
         .body(ElFileBody("bodies/bodies/DeleteHearing.json")).asJson
+        .check(substring("CANCELLATION_REQUESTED"))
         .check(status.is(200)))
 //        .check(bodyString.saveAs("BODY3")))
 //        .exec {
@@ -29,6 +30,6 @@ object DeleteHearing {
 //            println(session("BODY3").as[String])
 //            session
 //        }
-    .pause(MinThinkTime, MaxThinkTime)
     }
+    .pause(MinThinkTime, MaxThinkTime)
 }

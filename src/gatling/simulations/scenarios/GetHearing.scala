@@ -22,13 +22,14 @@ object GetHearing {
       exec(http(requestName = "get_hearing")
         .get("/hearing/#{hearingRequestID}")
         .headers(Environment.commonHeader)
-        .check(status.is(200)))
+        .check(substring("Appellant - Mr Joe Bloggs")))
+//        .check(status.is(200)))
 //        .check(bodyString.saveAs("BODY4")))
 //        .exec {
 //          session =>
 //            println(session("BODY4").as[String])
 //            session
 //        }
-    .pause(MinThinkTime, MaxThinkTime)
     }
+    .pause(MinThinkTime, MaxThinkTime)
 }

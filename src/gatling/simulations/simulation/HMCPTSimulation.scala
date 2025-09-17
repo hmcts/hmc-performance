@@ -171,9 +171,10 @@ class HMCPTSimulation extends Simulation
       .exec(GetAllHearing.GetAllHearing)
       .exec(GetHearing.GetHearing)
       .exec(GetAllHearing.GetAllHearing)
-      .randomSwitch(50.0 -> exitHere)
+      //.exec(RequestHearingResponse.RequestHearingResponse)
+      .randomSwitch(90.0 -> exitHere)
       .exec(UpdateHearing.UpdateHearing)
-      .randomSwitch(50.0 -> exitHere)
+      .randomSwitch(35.0 -> exitHere)
       .exec(DeleteHearing.DeleteHearing)
 
 
@@ -229,7 +230,7 @@ class HMCPTSimulation extends Simulation
       .maxDuration(30000)
 */
 
-    setUp(e2e.inject(rampUsers(2800).during(3500))
+    setUp(e2e.inject(rampUsers(2550).during(10750))
       .protocols(httpProtocol))
 
 //    setUp(CreateUser.inject(rampUsers(97).during(300)).protocols(httpProtocol))

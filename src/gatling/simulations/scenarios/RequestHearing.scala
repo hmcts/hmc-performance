@@ -26,7 +26,7 @@ object RequestHearing {
       .body(ElFileBody("bodies/bodies/RequestHearing.json")).asJson
       .check(status.is(201))
       .check(regex("\"status\":").saveAs("hearingstatus"))
-      .check(jsonPath("$..hearingRequestID").optional.saveAs("hearingRequestID"))
+      .check(jsonPath("$..hearingRequestID").saveAs("hearingRequestID"))
       .check(jsonPath("$..status").optional.saveAs("status"))
       .check(jsonPath("$..timeStamp").optional.saveAs("timeStamp"))
       .check(jsonPath("$..versionNumber").optional.saveAs("versionNumber")))
