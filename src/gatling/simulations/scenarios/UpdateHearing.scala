@@ -21,7 +21,7 @@ object UpdateHearing {
       .put("/hearing/#{hearingRequestID}")
       .headers(Environment.commonHeader)
       .body(ElFileBody("bodies/bodies/UpdateHearing.json")).asJson
-      .check(substring("UPDATE_REQUESTED"))
+      .check(substring("versionNumber"))
       .check(status.is(201)))
 //      .check(bodyString.saveAs("BODY2")))
 //    .exec{
