@@ -230,7 +230,7 @@ class HMCPTSimulation extends Simulation
       .maxDuration(30000)
 */
 
-    setUp(e2e.inject(rampUsers(2550).during(10750))
+    setUp(e2e.inject(rampUsers(7500).during(10750))
       .protocols(httpProtocol))
 
 //    setUp(CreateUser.inject(rampUsers(97).during(300)).protocols(httpProtocol))
